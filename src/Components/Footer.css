@@ -1,0 +1,29 @@
+/* .mainFooter{
+    background-color: red;
+    color: white;
+} */
+.mainFooter {
+  color: white;
+  background-color: #04aa6d;
+  padding-top: 0em;
+  position: absolute;
+  bottom: -2vh;
+  width: 100%;
+  overflow-x: hidden;
+  bottom: 0;
+  /* display: flex;
+  justify-content: space-between; */
+}
+.unstyledList {
+  /* display: flex; */
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+.col-sm {
+  text-align: center;
+}
+.col {
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 250px) and (max-width: 500px) {
+}
