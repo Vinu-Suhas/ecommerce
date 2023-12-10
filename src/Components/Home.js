@@ -7,7 +7,7 @@ import {
 } from "mdb-react-ui-kit";
 import { bucket } from "./Store/CreateStore";
 
-export function Home() {
+export function Home({newData}) {
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:5000/data")
@@ -68,14 +68,25 @@ export function Home() {
       </MDBCarousel> */}
       <div className="container">
         <div className="grid grid-two-column">
-          <p className="intro-data">
-            Welcome to 
-          </p>
-          <h1>IV Store</h1>
-          <p>
-            
-          </p>
-
+          <div className="hero-seciton-data">
+            <p className="intro-data">Welcome to</p>
+            <h1>IV Store</h1>
+            <p>
+              this is only to testthis is only to testthis is only to test this
+              is only to test this is only to test this is only to test vthis is
+              only to test this is only to test this is only to test this is
+              only to test this is only to test this is only to test this is
+              only to test this is only to test this is only to test this is
+              only to test this is only to test this is only to test this is
+              only to test this is only to
+            </p>
+            <button>Click here</button>
+          </div>
+          <div className="image-section">
+            <figure>
+              <img src="https://t4.ftcdn.net/jpg/05/90/98/01/360_F_590980156_W28QRjBKhacNz8WeTpDr3v3uUOp5A9JF.jpg" alt="Image"  className="section-image"/>
+            </figure>
+          </div>
         </div>
       </div>
     </>
