@@ -11,6 +11,7 @@
   width: 100%;
   overflow-x: hidden;
   bottom: 0;
+  position: fixed;
   /* display: flex;
   justify-content: space-between; */
 }

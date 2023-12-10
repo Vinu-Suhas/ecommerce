@@ -1,13 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import RouterCompo from './Components/RouterCompo';
-import { Footer } from './Components/Footer';
+import logo from "./logo.svg";
+import "./App.css";
+import RouterCompo from "./Components/RouterCompo";
+import { Footer } from "./Components/Footer";
+import { CreateStore } from "./Components/Store/CreateStore";
 
 function App() {
   return (
     <div className="App">
-      <RouterCompo />
-      <Footer />
+      <CreateStore>
+        <RouterCompo />
+        <Footer />
+      </CreateStore>
     </div>
   );
 }

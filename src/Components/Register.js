@@ -1,12 +1,24 @@
+import axios from "axios";
 import React, { createRef, useState } from "react";
 // console.log(event.target.value)
-export default function Login() {
+export function Register() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
   const passwordRef = createRef();
   const nameRef = createRef();
   const handleSubmit = () => {
-    console.log(formData);
+    // console.log(formData);
+    if (handleVerification()) {
+      axios
+        .post("http://localhost:5000/api/register",formData)
+        .then((response) => {
+          console.log("response after post login", response);
+        })
+        .catch((error) => console.log("error", error));
+    }
+  };
+  const handleVerification = () => {
+    return true;
   };
   const handleChange = (event) => {
     //live storing of data as the user types

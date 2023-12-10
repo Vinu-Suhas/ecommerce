@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useContext, useEffect } from "react";
+import axios from "axios";
 import {
   MDBCarousel,
   MDBCarouselItem,
   MDBCarouselCaption,
 } from "mdb-react-ui-kit";
+import { bucket } from "./Store/CreateStore";
 
 export function Home() {
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/data")
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, []);
+  // console.log(bucket.data);
+  const data = useContext(bucket);
+  // useEffect(() => {
+
+  //   console.log("filtered data",data.data.filter((element) => element.brand === "Apple"));
+  // }, []);
+
   return (
     <>
-      <MDBCarousel showIndicators showControls fade>
+      {/* <MDBCarousel showIndicators showControls fade>
         <MDBCarouselItem itemId={1}>
           <img
             src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
@@ -46,7 +65,19 @@ export function Home() {
             </p>
           </MDBCarouselCaption>
         </MDBCarouselItem>
-      </MDBCarousel>
+      </MDBCarousel> */}
+      <div className="container">
+        <div className="grid grid-two-column">
+          <p className="intro-data">
+            Welcome to 
+          </p>
+          <h1>IV Store</h1>
+          <p>
+            
+          </p>
+
+        </div>
+      </div>
     </>
   );
 }
