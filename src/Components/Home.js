@@ -7,7 +7,7 @@ import {
 } from "mdb-react-ui-kit";
 import { bucket } from "./Store/CreateStore";
 
-export function Home({newData}) {
+export function Home({ newData }) {
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:5000/data")
@@ -27,45 +27,6 @@ export function Home({newData}) {
 
   return (
     <>
-      {/* <MDBCarousel showIndicators showControls fade>
-        <MDBCarouselItem itemId={1}>
-          <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(15).jpg"
-            className="d-block w-100"
-            alt="..."
-          />
-          <MDBCarouselCaption>
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </MDBCarouselCaption>
-        </MDBCarouselItem>
-
-        <MDBCarouselItem itemId={2}>
-          <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg"
-            className="d-block w-100"
-            alt="..."
-          />
-          <MDBCarouselCaption>
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </MDBCarouselCaption>
-        </MDBCarouselItem>
-
-        <MDBCarouselItem itemId={3}>
-          <img
-            src="https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg"
-            className="d-block w-100"
-            alt="..."
-          />
-          <MDBCarouselCaption>
-            <h5>Third slide label</h5>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </MDBCarouselCaption>
-        </MDBCarouselItem>
-      </MDBCarousel> */}
       <div className="container">
         <div className="grid grid-two-column">
           <div className="hero-seciton-data">
@@ -80,11 +41,15 @@ export function Home({newData}) {
               only to test this is only to test this is only to test this is
               only to test this is only to
             </p>
-            <button>Click here</button>
+            <button className="shopNow">SHOP NOW</button>
           </div>
           <div className="image-section">
             <figure>
-              <img src="https://t4.ftcdn.net/jpg/05/90/98/01/360_F_590980156_W28QRjBKhacNz8WeTpDr3v3uUOp5A9JF.jpg" alt="Image"  className="section-image"/>
+              <img
+                src="https://t4.ftcdn.net/jpg/05/90/98/01/360_F_590980156_W28QRjBKhacNz8WeTpDr3v3uUOp5A9JF.jpg"
+                alt="Image"
+                className="section-image"
+              />
             </figure>
           </div>
         </div>

@@ -1,23 +1,25 @@
 import axios from "axios";
 import React, { createRef, useState } from "react";
-export function Register() {
+// console.log(event.target.value)
+export function Login() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
   const passwordRef = createRef();
-  const nameRef = createRef();
   const handleSubmit = () => {
-    // console.log(formData);
+    console.log(formData);
     if (handleVerification()) {
       axios
-        .post("http://localhost:5000/api/register", formData)
+        .post("http://localhost:5000/api/login", formData)
         .then((response) => {
-          console.log("response after post login", response);
+          //     console.log(response)
+          //   console.log(response.data);
+          if (response.status === 200)
+            localStorage.setItem("items", JSON.stringify(response.data.token));
         })
         .catch((error) => console.log("error", error));
     }
   };
   const handleVerification = () => {
-    if (nameRef.current.value === "") return false;
     if (passwordRef.current.value === "") return false;
     if (emailRef.current.value === "") return false;
     return true;
@@ -27,27 +29,16 @@ export function Register() {
     //used in instead of direct because only 1 field data is saved
     formData[event.target.name] = event.target.value;
     setFormData(formData);
+    // console.log(formData);
   };
   return (
     <>
       <form className="formContainer">
         <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter the name"
-            id="name"
-            onChange={handleChange}
-            minLength={1}
-            ref={nameRef}
-          />
-        </label>
-        <label>
-          Email
+          Emailw
           <input
             type="email"
-            name="email;"
+            name="email"
             placeholder="Enter the email"
             id="email"
             onChange={handleChange}
@@ -68,7 +59,7 @@ export function Register() {
           />
         </label>
         <button onClick={() => handleSubmit()} type="button">
-          Sign up
+          Login
         </button>
       </form>
     </>

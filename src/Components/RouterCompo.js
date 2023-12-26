@@ -13,34 +13,72 @@ import { Footer } from "./Footer";
 import { Register } from "./Register";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgClose, CgMenu } from "react-icons/cg";
+import { Login } from "./Login";
+import { useHoverEffect } from "./CustomHook/useHoverEffect";
+import { DropdownMenu } from "./DropdownMenu";
 
 function RouterCompo() {
   const hightlightButtons = ({ isActive }) => ({
     color: isActive ? "darkgreen" : "white",
   });
+  const Smartphones = useHoverEffect();
+  const Laptops = useHoverEffect();
+  const Tablets = useHoverEffect();
+  const Accessories = useHoverEffect();
   return (
     <div style={{ marginBottom: "10rem" }}>
       <BrowserRouter>
         <ul className="headingContainer">
           <NavLink to="/home" style={hightlightButtons}>
             <li className="dropdown">Home</li>
-            <div class="dropdown-content">
-              <a href="#test">Link 1</a>
-              <a href="#test">Link 2</a>
-              <a href="#test">Link 3</a>
-            </div>
           </NavLink>
           <NavLink style={hightlightButtons} to="/smartphones">
-            <li>Smartphones</li>
+            <li
+              onMouseEnter={Smartphones.handleMouseEnter}
+              onMouseLeave={Smartphones.handleMouseLeave}
+            >
+              Smartphones
+              {Smartphones.isDropdownVisible && (
+                <DropdownMenu
+                  dataset={["Apple", "Samsung", "Asus", "Google"]}
+                />
+              )}
+            </li>
           </NavLink>
           <NavLink style={hightlightButtons} to="/laptops">
-            <li>Laptops</li>
+            <li
+              onMouseEnter={Laptops.handleMouseEnter}
+              onMouseLeave={Laptops.handleMouseLeave}
+            >
+              Laptops
+              {Laptops.isDropdownVisible && (
+                <DropdownMenu dataset={["Apple", "HP", "Asus", "Lenova"]} />
+              )}
+            </li>
           </NavLink>
           <NavLink style={hightlightButtons} to="/tablets">
-            <li>Tablets</li>
+            <li
+              onMouseEnter={Tablets.handleMouseEnter}
+              onMouseLeave={Tablets.handleMouseLeave}
+            >
+              Tablets
+              {Tablets.isDropdownVisible && (
+                <DropdownMenu
+                  dataset={["Apple", "Google", "Samsung", "Xiaomi"]}
+                />
+              )}
+            </li>
           </NavLink>
           <NavLink style={hightlightButtons} to="/accessories">
-            <li>Accessories</li>
+            <li
+              onMouseEnter={Accessories.handleMouseEnter}
+              onMouseLeave={Accessories.handleMouseLeave}
+            >
+              Accessories
+              {Accessories.isDropdownVisible && (
+                <DropdownMenu dataset={["Apple", "Boat", "Samsung", "Anker"]} />
+              )}
+            </li>
           </NavLink>
           <NavLink
             style={hightlightButtons}
@@ -53,8 +91,8 @@ function RouterCompo() {
         </ul>
         {/* mobile navbar */}
         <div className="mobile-navbar-btn">
-          <CgMenu  className="mobile-nav-icon"/>
-          <CgClose  className="mobile-nav-icon close-outline"/>
+          <CgMenu className="mobile-nav-icon" />
+          <CgClose className="mobile-nav-icon close-outline" />
         </div>
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -66,6 +104,7 @@ function RouterCompo() {
           <Route path="/contactus" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
