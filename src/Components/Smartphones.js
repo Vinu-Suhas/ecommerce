@@ -78,20 +78,25 @@ export function Smartphones() {
     },
   ]);
   return (
-    <div style={{display:"flex",justifyContent:"space-evenly",flexWrap:"wrap"}}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap",
+      }}
+    >
       {/* <div>This is Smartphones Components</div> */}
       {data.map((element, index) => {
         return (
-          <Link to={`/productinfo/${element.id}`}>
-            <ProductGrid
-              name={element.name}
-              brand={element.brand}
-              color={element.color}
-              storage={element.storage}
-              img={element.imageLink}
-              key={index}
-            />
-          </Link>
+          <ProductGrid
+            id={element.id}
+            name={element.name}
+            brand={element.brand}
+            color={element.color}
+            storage={element.storage}
+            img={element.imageLink}
+            key={index}
+          />
         );
       })}
     </div>

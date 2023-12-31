@@ -17,9 +17,19 @@ function CreateStore(props) {
     //   });
   });
   const [data, setData] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+
+  const addToCart = (itemid) => {
+    if (cartItems[itemid] === undefined) {
+      setCartItems({ ...cartItems, [itemid]: 1 });
+      console.log("asdasd", cartItems);
+      console.log("dict ", { ...cartItems, [itemid]: 1 });
+    } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] + 1 });
+    console.log(cartItems);
+  };
   return (
     <>
-      <bucket.Provider value={{ data, setData }}>
+      <bucket.Provider value={{ data, setData, addToCart, cartItems }}>
         {props.children}
       </bucket.Provider>
     </>

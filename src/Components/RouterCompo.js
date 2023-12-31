@@ -21,7 +21,7 @@ function RouterCompo() {
   const hightlightButtons = ({ isActive }) => ({
     color: isActive ? "darkgreen" : "white",
   });
-  const Smartphones = useHoverEffect();
+  const Smartphone = useHoverEffect();
   const Laptops = useHoverEffect();
   const Tablets = useHoverEffect();
   const Accessories = useHoverEffect();
@@ -34,11 +34,11 @@ function RouterCompo() {
           </NavLink>
           <NavLink style={hightlightButtons} to="/smartphones">
             <li
-              onMouseEnter={Smartphones.handleMouseEnter}
-              onMouseLeave={Smartphones.handleMouseLeave}
+              onMouseEnter={Smartphone.handleMouseEnter}
+              onMouseLeave={Smartphone.handleMouseLeave}
             >
               Smartphones
-              {Smartphones.isDropdownVisible && (
+              {Smartphone.isDropdownVisible && (
                 <DropdownMenu
                   dataset={["Apple", "Samsung", "Asus", "Google"]}
                 />
