@@ -96,14 +96,18 @@ function CreateStore(props) {
   const addToCart = (itemid) => {
     if (cartItems[itemid] === undefined) {
       setCartItems({ ...cartItems, [itemid]: 1 });
-      console.log("asdasd", cartItems);
-      console.log("dict ", { ...cartItems, [itemid]: 1 });
     } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] + 1 });
-    console.log(cartItems);
+  };
+  const removeFromCart = (itemid) => {
+    if (cartItems[itemid] === undefined) {
+      console.log("error");
+    } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] - 1 });
   };
   return (
     <>
-      <bucket.Provider value={{ data, setData, addToCart, cartItems }}>
+      <bucket.Provider
+        value={{ data, setData, addToCart, cartItems, removeFromCart }}
+      >
         {props.children}
       </bucket.Provider>
     </>
