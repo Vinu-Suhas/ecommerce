@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./Home";
 import { Smartphones } from "./Smartphones";
@@ -16,8 +16,20 @@ import { CgClose, CgMenu } from "react-icons/cg";
 import { Login } from "./Login";
 import { useHoverEffect } from "./CustomHook/useHoverEffect";
 import { DropdownMenu } from "./DropdownMenu";
+import { bucket } from "./Store/CreateStore";
 
 function RouterCompo() {
+  const { cartItems } = useContext(bucket);
+  const [cartItemCount, setCartItemsCount] = useState(0);
+  useEffect(() => {
+    let count = 0;
+    for (const value of Object.values(cartItems)) {
+      count += value;
+    }
+    setCartItemsCount(count);
+
+    console.log(cartItemCount);
+  }, [cartItems]);
   const hightlightButtons = ({ isActive }) => ({
     color: isActive ? "darkgreen" : "white",
   });
@@ -86,7 +98,7 @@ function RouterCompo() {
             className="navbar-link cart-trolley--link"
           >
             <FiShoppingCart className="cart-trolley" />
-            <span className="cart-total--item">8</span>
+            <span className="cart-total--item">{cartItemCount}</span>
           </NavLink>
         </ul>
         {/* mobile navbar */}
