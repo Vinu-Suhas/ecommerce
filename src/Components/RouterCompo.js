@@ -34,9 +34,9 @@ function RouterCompo() {
     color: isActive ? "darkgreen" : "white",
   });
   const Smartphone = useHoverEffect();
-  const Laptops = useHoverEffect();
-  const Tablets = useHoverEffect();
-  const Accessories = useHoverEffect();
+  const Laptop = useHoverEffect();
+  const Tablet = useHoverEffect();
+  const Accessorie = useHoverEffect();
   return (
     <div style={{ marginBottom: "10rem" }}>
       <BrowserRouter>
@@ -59,22 +59,22 @@ function RouterCompo() {
           </NavLink>
           <NavLink style={hightlightButtons} to="/laptops">
             <li
-              onMouseEnter={Laptops.handleMouseEnter}
-              onMouseLeave={Laptops.handleMouseLeave}
+              onMouseEnter={Laptop.handleMouseEnter}
+              onMouseLeave={Laptop.handleMouseLeave}
             >
               Laptops
-              {Laptops.isDropdownVisible && (
+              {Laptop.isDropdownVisible && (
                 <DropdownMenu dataset={["Apple", "HP", "Asus", "Lenova"]} />
               )}
             </li>
           </NavLink>
           <NavLink style={hightlightButtons} to="/tablets">
             <li
-              onMouseEnter={Tablets.handleMouseEnter}
-              onMouseLeave={Tablets.handleMouseLeave}
+              onMouseEnter={Tablet.handleMouseEnter}
+              onMouseLeave={Tablet.handleMouseLeave}
             >
               Tablets
-              {Tablets.isDropdownVisible && (
+              {Tablet.isDropdownVisible && (
                 <DropdownMenu
                   dataset={["Apple", "Google", "Samsung", "Xiaomi"]}
                 />
@@ -83,11 +83,11 @@ function RouterCompo() {
           </NavLink>
           <NavLink style={hightlightButtons} to="/accessories">
             <li
-              onMouseEnter={Accessories.handleMouseEnter}
-              onMouseLeave={Accessories.handleMouseLeave}
+              onMouseEnter={Accessorie.handleMouseEnter}
+              onMouseLeave={Accessorie.handleMouseLeave}
             >
               Accessories
-              {Accessories.isDropdownVisible && (
+              {Accessorie.isDropdownVisible && (
                 <DropdownMenu dataset={["Apple", "Boat", "Samsung", "Anker"]} />
               )}
             </li>
