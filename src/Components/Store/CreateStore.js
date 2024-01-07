@@ -5,17 +5,8 @@ import { createContext } from "react";
 export const bucket = createContext();
 
 function CreateStore(props) {
-  useEffect(() => {
-    // axios
-    //   .get("http://localhost:5000/data")
-    //   .then(function (response) {
-    //     console.log(response.data);
-    //     setData(response.data);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-  });
+  const [cartItemCount, setCartItemsCount] = useState(0);
+  const [cartItems, setCartItems] = useState({});
   const [data, setData] = useState([
     {
       id: 1,
@@ -24,6 +15,7 @@ function CreateStore(props) {
       color: "black",
       storage: "128GB",
       imageLink: "https://example.com/samsung-galaxy-s21-image.jpg",
+      price: "12000",
     },
     {
       id: 2,
@@ -32,6 +24,7 @@ function CreateStore(props) {
       color: "white",
       storage: "256GB",
       imageLink: "https://example.com/google-pixel-5-image.jpg",
+      price: "25000",
     },
     {
       id: 3,
@@ -40,6 +33,7 @@ function CreateStore(props) {
       color: "silver",
       storage: "256GB",
       imageLink: "https://example.com/oneplus-9-image.jpg",
+      price: "25000",
     },
     {
       id: 4,
@@ -48,6 +42,7 @@ function CreateStore(props) {
       color: "gold",
       storage: "128GB",
       imageLink: "https://example.com/huawei-p40-pro-image.jpg",
+      price: "25000",
     },
     {
       id: 5,
@@ -56,6 +51,7 @@ function CreateStore(props) {
       color: "green",
       storage: "128GB",
       imageLink: "https://example.com/xiaomi-mi-11-image.jpg",
+      price: "25000",
     },
     {
       id: 6,
@@ -64,6 +60,7 @@ function CreateStore(props) {
       color: "blue",
       storage: "256GB",
       imageLink: "https://example.com/iphone-13-image.jpg",
+      price: "25000",
     },
     {
       id: 7,
@@ -72,6 +69,7 @@ function CreateStore(props) {
       color: "purple",
       storage: "256GB",
       imageLink: "https://example.com/sony-xperia-1-iii-image.jpg",
+      price: "25000",
     },
     {
       id: 8,
@@ -80,6 +78,7 @@ function CreateStore(props) {
       color: "gray",
       storage: "128GB",
       imageLink: "https://example.com/motorola-edge-20-image.jpg",
+      price: "25000",
     },
     {
       id: 9,
@@ -88,10 +87,30 @@ function CreateStore(props) {
       color: "silver",
       storage: "128GB",
       imageLink: "https://example.com/lg-velvet-image.jpg",
+      price: "25000",
     },
   ]);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:5000/data")
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //       setData(response.data);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // });
+  useEffect(() => {
+    let count = 0;
+    for (const value of Object.values(cartItems)) {
+      count += value;
+    }
+    setCartItemsCount(count);
+
+    console.log(cartItemCount);
+  }, [cartItems]);
   // const [data, setData] = useState([]);
-  const [cartItems, setCartItems] = useState({});
 
   const addToCart = (itemid) => {
     if (cartItems[itemid] === undefined) {
@@ -106,7 +125,14 @@ function CreateStore(props) {
   return (
     <>
       <bucket.Provider
-        value={{ data, setData, addToCart, cartItems, removeFromCart }}
+        value={{
+          data,
+          setData,
+          addToCart,
+          cartItems,
+          removeFromCart,
+          cartItemCount,
+        }}
       >
         {props.children}
       </bucket.Provider>

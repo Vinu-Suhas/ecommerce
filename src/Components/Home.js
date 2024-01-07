@@ -1,13 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import axios from "axios";
-import {
-  MDBCarousel,
-  MDBCarouselItem,
-  MDBCarouselCaption,
-} from "mdb-react-ui-kit";
 import { bucket } from "./Store/CreateStore";
+import { WallpaperCarousel } from "./SlideShow/WalpaperCarousel";
+import { useNavigate } from "react-router-dom";
 
 export function Home({ newData }) {
+  const nav = useNavigate();
   // useEffect(() => {
   //   axios
   //     .get("http://localhost:5000/data")
@@ -41,7 +39,9 @@ export function Home({ newData }) {
               only to test this is only to test this is only to test this is
               only to test this is only to
             </p>
-            <button className="shopNow">SHOP NOW</button>
+            <button className="shopNow" onClick={() => nav("/smartphones")}>
+              SHOP NOW
+            </button>
           </div>
           <div className="image-section">
             <figure>
@@ -54,6 +54,10 @@ export function Home({ newData }) {
           </div>
         </div>
       </div>
+      <WallpaperCarousel />
+      <hr style={{ marginTop: "2.5vh" }} />
+      <h2 style={{ textAlign: "center" }}>BEST SELLER </h2>
+      <hr />
     </>
   );
 }

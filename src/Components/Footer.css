@@ -6,12 +6,12 @@
   color: white;
   background-color: #04aa6d;
   padding-top: 0em;
-  position: absolute;
+  position: relative;
   bottom: -2vh;
   width: 100%;
   overflow-x: hidden;
   bottom: 0;
-  position: fixed;
+  /* position: fixed; */
   /* display: flex;
   justify-content: space-between; */
 }

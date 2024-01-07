@@ -1,0 +1,15 @@
+.cartItems {
+  width: 40%;
+  border: 5px solid green;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4vh;
+}
+@media (max-width: 768px) {
+  .cartItems {
+    width: 60%;
+  }
+}

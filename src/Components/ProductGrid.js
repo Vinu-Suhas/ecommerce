@@ -21,7 +21,7 @@ export function ProductGrid(props) {
           addToCart(props.id);
         }}
       >
-        Buy now ({cartAmount > 0 && cartAmount})
+        Buy now {cartAmount > 0 && <>({cartAmount})</>}
       </button>
     </div>
   );

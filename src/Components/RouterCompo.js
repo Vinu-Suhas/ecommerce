@@ -7,7 +7,7 @@ import { Tablets } from "./Tablets";
 import { Accessories } from "./Accessories";
 import ProductInfo from "./ProductInfo";
 import Contact from "./Contact";
-import { Cart } from "./Cart";
+import { Cart } from "./Cart/Cart";
 import ErrorPage from "./ErrorPage";
 import { Footer } from "./Footer";
 import { Register } from "./Register";
@@ -19,17 +19,8 @@ import { DropdownMenu } from "./DropdownMenu";
 import { bucket } from "./Store/CreateStore";
 
 function RouterCompo() {
-  const { cartItems } = useContext(bucket);
-  const [cartItemCount, setCartItemsCount] = useState(0);
-  useEffect(() => {
-    let count = 0;
-    for (const value of Object.values(cartItems)) {
-      count += value;
-    }
-    setCartItemsCount(count);
+  const { cartItemCount } = useContext(bucket);
 
-    console.log(cartItemCount);
-  }, [cartItems]);
   const hightlightButtons = ({ isActive }) => ({
     color: isActive ? "darkgreen" : "white",
   });
