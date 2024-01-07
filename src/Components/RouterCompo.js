@@ -5,7 +5,7 @@ import { Smartphones } from "./Smartphones/Smartphones";
 import { Laptops } from "./Laptops";
 import { Tablets } from "./Tablets";
 import { Accessories } from "./Accessories";
-import ProductInfo from "./ProductInfo";
+import ProductInfo from "./ProductInfo/ProductInfo";
 import Contact from "./Contact";
 import { Cart } from "./Cart/Cart";
 import ErrorPage from "./ErrorPage";
@@ -31,10 +31,10 @@ function RouterCompo() {
   const Accessorie = useHoverEffect();
   return (
     <>
-      <SearchBarHeader />
-      <div>
-        {/* style={{ marginBottom: "10rem" }} */}
-        <BrowserRouter>
+      <BrowserRouter>
+        <SearchBarHeader />
+        <div>
+          {/* style={{ marginBottom: "10rem" }} */}
           <ul className="headingContainer">
             <NavLink to="/home" style={hightlightButtons}>
               <li className="dropdown">Home</li>
@@ -116,8 +116,8 @@ function RouterCompo() {
             <Route path="/login" element={<Login />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
