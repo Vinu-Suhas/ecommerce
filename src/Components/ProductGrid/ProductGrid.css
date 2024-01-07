@@ -1,0 +1,22 @@
+.productContainer {
+  display: flex;
+  border: solid 3px green;
+  margin-bottom: 5px;
+  flex-direction: column;
+  width: fit-content;
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  align-items: center;
+  min-width: 20vw;
+  margin-bottom: 3vh;
+}
+
+.productContainer button {
+  text-decoration: none;
+  color: white;
+  background: green;
+  border-radius: 16px;
+  padding: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
+}

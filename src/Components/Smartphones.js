@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ProductGrid } from "./ProductGrid";
+import { ProductGrid } from "./ProductGrid/ProductGrid";
 import { bucket } from "./Store/CreateStore";
 
 export function Smartphones() {
@@ -28,6 +28,7 @@ export function Smartphones() {
               storage={element.storage}
               img={element.imageLink}
               key={index}
+              rating={element.rating}
             />
           );
         })}

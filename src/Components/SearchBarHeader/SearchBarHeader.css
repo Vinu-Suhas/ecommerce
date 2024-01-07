@@ -1,0 +1,25 @@
+.searchBarHeaderContainer {
+  background-color: #04aa6d;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  align-items: center;
+}
+
+.searchBarHeaderContainer input {
+  border-radius: 16px;
+  height: 3vh;
+  width: 24vw;
+}
+
+.searchResultContainer {
+  z-index: 45;
+  position: relative;
+  background-color: blue;
+  color: wheat;
+}
+
+.logo {
+  font-weight: bold;
+}

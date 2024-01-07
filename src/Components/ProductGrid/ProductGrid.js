@@ -1,22 +1,37 @@
 import React, { useContext } from "react";
-import { bucket } from "./Store/CreateStore";
+import { bucket } from "../Store/CreateStore";
 import { Link } from "react-router-dom";
-
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import "./ProductGrid.css";
 export function ProductGrid(props) {
   const { addToCart, cartItems } = useContext(bucket);
   const cartAmount = cartItems[props.id] ?? 0;
   return (
     <div className="productContainer">
-      <Link to={`/productinfo/${props.id}`}>
+      <Link
+        to={`/productinfo/${props.id}`}
+        style={{ textDecoration: "none", color: "black" }}
+      >
         <img
           src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-x-new-1.jpg"
           style={{ height: "17vh" }}
         />
-        <h2 className="black">{props.name}</h2>
+
+        <h2 className="black" style={{ textDecoration: "none" }}>
+          {props.name}
+        </h2>
       </Link>
+      <h3>
+        Rating :{props.rating}{" "}
+        {parseInt(props.rating) === props.rating ? (
+          <FaStar />
+        ) : (
+          <FaStarHalfAlt />
+        )}
+      </h3>
       <h3>{props.storage}</h3>
       <button
-        style={{ textDecoration: "none" }}
+        // style={{ textDecoration: "none", color: "white", background: "green" }}
         onClick={() => {
           addToCart(props.id);
         }}

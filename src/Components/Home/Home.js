@@ -10,7 +10,7 @@ import { RiCustomerServiceFill } from "react-icons/ri";
 import { GiCardExchange } from "react-icons/gi";
 import { MdEnhancedEncryption } from "react-icons/md";
 import { IconContext } from "react-icons";
-import { ProductGrid } from "../ProductGrid";
+import { ProductGrid } from "../ProductGrid/ProductGrid";
 
 export function Home({ newData }) {
   const nav = useNavigate();
@@ -77,6 +77,7 @@ export function Home({ newData }) {
               storage={element.storage}
               img={element.imageLink}
               key={index}
+              rating={element.rating}
             />
           );
         })}

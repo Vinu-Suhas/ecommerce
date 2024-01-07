@@ -16,6 +16,7 @@ function CreateStore(props) {
       storage: "128GB",
       imageLink: "https://example.com/samsung-galaxy-s21-image.jpg",
       price: "12000",
+      rating: 3,
     },
     {
       id: 2,
@@ -25,6 +26,7 @@ function CreateStore(props) {
       storage: "256GB",
       imageLink: "https://example.com/google-pixel-5-image.jpg",
       price: "25000",
+      rating: 4,
     },
     {
       id: 3,
@@ -34,6 +36,7 @@ function CreateStore(props) {
       storage: "256GB",
       imageLink: "https://example.com/oneplus-9-image.jpg",
       price: "25000",
+      rating: 3.5,
     },
     {
       id: 4,
@@ -43,6 +46,7 @@ function CreateStore(props) {
       storage: "128GB",
       imageLink: "https://example.com/huawei-p40-pro-image.jpg",
       price: "25000",
+      rating: 2.5,
     },
     {
       id: 5,
@@ -52,6 +56,7 @@ function CreateStore(props) {
       storage: "128GB",
       imageLink: "https://example.com/xiaomi-mi-11-image.jpg",
       price: "25000",
+      rating: 3,
     },
     {
       id: 6,
@@ -61,6 +66,7 @@ function CreateStore(props) {
       storage: "256GB",
       imageLink: "https://example.com/iphone-13-image.jpg",
       price: "25000",
+      rating: 3.6,
     },
     {
       id: 7,
@@ -70,6 +76,7 @@ function CreateStore(props) {
       storage: "256GB",
       imageLink: "https://example.com/sony-xperia-1-iii-image.jpg",
       price: "25000",
+      rating: 5,
     },
     {
       id: 8,
@@ -79,6 +86,7 @@ function CreateStore(props) {
       storage: "128GB",
       imageLink: "https://example.com/motorola-edge-20-image.jpg",
       price: "25000",
+      rating: 5,
     },
     {
       id: 9,
@@ -88,6 +96,7 @@ function CreateStore(props) {
       storage: "128GB",
       imageLink: "https://example.com/lg-velvet-image.jpg",
       price: "25000",
+      rating: 2,
     },
   ]);
   // useEffect(() => {
