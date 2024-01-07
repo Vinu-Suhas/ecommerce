@@ -8,7 +8,7 @@ export const SearchBarHeader = () => {
     setSearchData(event.target.value);
   };
   return (
-    <>
+    <div className="searchBarHeaderContainermain">
       <div className="searchBarHeaderContainer">
         <span className="logo">iFRUIT STORE</span>
         <input type="text" onChange={handleSeatchField} />
@@ -17,6 +17,6 @@ export const SearchBarHeader = () => {
       {searchData.length > 0 ? (
         <div className="searchResultContainer">{searchData}</div>
       ) : null}
-    </>
+    </div>
   );
 };

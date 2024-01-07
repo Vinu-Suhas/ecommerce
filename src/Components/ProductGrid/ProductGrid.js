@@ -22,7 +22,7 @@ export function ProductGrid(props) {
         </h2>
       </Link>
       <h3>
-        Rating :{props.rating}{" "}
+        Rating :{props.rating}
         {parseInt(props.rating) === props.rating ? (
           <FaStar />
         ) : (

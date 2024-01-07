@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { ProductGrid } from "./ProductGrid/ProductGrid";
-import { bucket } from "./Store/CreateStore";
+import { ProductGrid } from "../ProductGrid/ProductGrid";
+import { bucket } from "../Store/CreateStore";
 
 export function Smartphones() {
   const [newData, setNewData] = useState([]);
