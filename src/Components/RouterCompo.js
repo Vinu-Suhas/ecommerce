@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
-import { Home } from "./Home";
+import { Home } from "./Home/Home";
 import { Smartphones } from "./Smartphones";
 import { Laptops } from "./Laptops";
 import { Tablets } from "./Tablets";

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { ProductGrid } from "./ProductGrid";
 import { bucket } from "./Store/CreateStore";
 
@@ -8,7 +7,6 @@ export function Smartphones() {
   const { data } = useContext(bucket);
   useEffect(() => {
     setNewData(data);
-    console.log("rendered");
   }, [data]);
   return (
     <>
@@ -20,7 +18,6 @@ export function Smartphones() {
           flexWrap: "wrap",
         }}
       >
-        {/* <div>This is Smartphones Components</div> */}
         {newData.map((element, index) => {
           return (
             <ProductGrid
