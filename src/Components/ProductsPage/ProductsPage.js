@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProductGrid } from "../ProductGrid/ProductGrid";
 import { bucket } from "../Store/CreateStore";
 
-export function Smartphones(props) {
+export function ProductsPage(props) {
   const [newData, setNewData] = useState([]);
   const [filter, setFilter] = useState("");
   const { data } = useContext(bucket);

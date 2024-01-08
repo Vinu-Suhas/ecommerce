@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./Home/Home";
-import { Smartphones } from "./Smartphones/Smartphones";
+import { ProductsPage } from "./ProductsPage/ProductsPage";
 import { Laptops } from "./Laptops";
 import { Tablets } from "./Tablets";
 import { Accessories } from "./Accessories";
@@ -39,19 +39,19 @@ function RouterCompo() {
             <NavLink to="/home" style={hightlightButtons}>
               <li className="dropdown">Home</li>
             </NavLink>
-            <NavLink style={hightlightButtons} to="/smartphones">
-              <li
-                onMouseEnter={Smartphone.handleMouseEnter}
-                onMouseLeave={Smartphone.handleMouseLeave}
-              >
+            <li
+              onMouseEnter={Smartphone.handleMouseEnter}
+              onMouseLeave={Smartphone.handleMouseLeave}
+            >
+              <NavLink style={hightlightButtons} to="/smartphones">
                 Smartphones
-                {Smartphone.isDropdownVisible && (
-                  <DropdownMenu
-                    dataset={["Apple", "Samsung", "Asus", "Google"]}
-                  />
-                )}
-              </li>
-            </NavLink>
+              </NavLink>
+              {Smartphone.isDropdownVisible && (
+                <DropdownMenu
+                  dataset={["Apple", "Samsung", "Asus", "Google"]}
+                />
+              )}
+            </li>
             <NavLink style={hightlightButtons} to="/laptops">
               <li
                 onMouseEnter={Laptop.handleMouseEnter}
@@ -105,7 +105,15 @@ function RouterCompo() {
           </div>
           <Routes>
             <Route path="/home" element={<Home />} />
-            <Route path="/smartphones" element={<Smartphones />} />
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/smartphones"
+              element={
+                <ProductsPage
+                  brands={["Samsung", "Google", "Oneplus", "Sony"]}
+                />
+              }
+            />
             <Route path="/laptops" element={<Laptops />} />
             <Route path="/tablets" element={<Tablets />} />
             <Route path="/accessories" element={<Accessories />} />
