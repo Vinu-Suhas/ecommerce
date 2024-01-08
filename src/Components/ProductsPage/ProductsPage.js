@@ -15,14 +15,13 @@ export function ProductsPage(props) {
   }, [data]);
 
   useEffect(() => {
-    if (brandFilter === "") setNewData(data);
+    if (brandFilter === "") setNewData(products);
     else {
       setNewData(
         products.filter(
           (item) => item.brand.toLowerCase() === brandFilter.toLowerCase()
         )
       );
-      console.log(products);
     }
   }, [products, brandFilter]);
   return (

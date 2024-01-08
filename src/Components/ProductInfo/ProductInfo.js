@@ -23,7 +23,19 @@ export default function ProductInfo() {
           <h3>Brand: {product.brand}</h3>
           <h3>Color: {product.color}</h3>
           <h3>Storage: {product.storage}</h3>
-          <h3>Price: ₹{product.price}</h3>
+          <h3>
+            Price:{" "}
+            <span
+              style={{
+                textDecoration: "line-through",
+                textDecorationThickness: "3px",
+                textDecorationColor: "red",
+              }}
+            >
+              ₹{parseInt(product.price) + 2000}
+            </span>
+            <span style={{ color: "red" }}>{product.price}</span>
+          </h3>
           <h3>
             Rating :{product.rating}
             {parseInt(product.rating) === product.rating ? (

@@ -69,17 +69,17 @@ function RouterCompo() {
                 <DropdownMenu dataset={brandsByCategory.smartphone} />
               )}
             </li>
-            <NavLink style={hightlightButtons} to="/laptops">
-              <li
-                onMouseEnter={Laptop.handleMouseEnter}
-                onMouseLeave={Laptop.handleMouseLeave}
-              >
+            <li
+              onMouseEnter={Laptop.handleMouseEnter}
+              onMouseLeave={Laptop.handleMouseLeave}
+            >
+              <NavLink style={hightlightButtons} to="/laptops">
                 Laptops
-                {Laptop.isDropdownVisible && (
-                  <DropdownMenu dataset={["Apple", "HP", "Asus", "Lenova"]} />
-                )}
-              </li>
-            </NavLink>
+              </NavLink>
+              {Laptop.isDropdownVisible && (
+                <DropdownMenu dataset={brandsByCategory.laptop} />
+              )}
+            </li>
             <NavLink style={hightlightButtons} to="/tablets">
               <li
                 onMouseEnter={Tablet.handleMouseEnter}
@@ -133,7 +133,16 @@ function RouterCompo() {
                 />
               }
             />
-            <Route path="/laptops" element={<Laptops />} />
+            <Route
+              path="/laptops"
+              element={
+                <ProductsPage
+                  brands={brandsByCategory.laptop}
+                  category={"laptop"}
+                  brand={""}
+                />
+              }
+            />
             <Route path="/tablets" element={<Tablets />} />
             <Route path="/accessories" element={<Accessories />} />
             <Route path="/productinfo/:id" element={<ProductInfo />} />

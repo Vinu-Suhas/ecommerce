@@ -118,7 +118,8 @@ function CreateStore(props) {
     },
     {
       id: 10,
-      name: "Lenovo LOQ 15IRH8 Gaming Laptop",
+      name: "Lenovo LOQ 15IRH8",
+      brand: "Lenovo",
       imageLink:
         "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/7/m/c/-original-imagtvudctd8grxy.jpeg?q=70",
       storage: "512GB",
@@ -132,25 +133,38 @@ function CreateStore(props) {
         "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/z/b/c/-original-imagtucnf8mszzhy.jpeg?q=70",
 
       storage: "512GB",
+      brand: "Asus",
       price: "31990",
       category: "laptop",
     },
     {
-      id: 11,
+      id: 12,
       name: "ASUS Vivobook 15",
       imageLink:
         "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/n/m/h/x1502za-ej544ws-thin-and-light-laptop-asus-original-imagtxpgachxjzhm.jpeg?q=70",
 
       storage: "512GB",
+      brand: "Asus",
       price: "65990",
       category: "laptop",
     },
     {
-      id: 12,
+      id: 13,
       name: "SAMSUNG Galaxy Book2 Pro",
       imageLink:
         "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/x/x/i/-original-imagupz9spjhhhtw.jpeg?q=70",
       storage: "512GB",
+      brand: "Samsung",
+      price: "62390",
+      category: "laptop",
+    },
+    {
+      id: 14,
+      name: "APPLE 2020 Macbook Air",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/kp5sya80/screen-guard/tempered-glass/o/v/n/apple-macbook-air-m1-13-3-inch-lightwings-original-imag3gh5xftgbpg3.jpeg?q=70",
+      storage: "512GB",
+      brand: "Apple",
       price: "62390",
       category: "laptop",
     },
