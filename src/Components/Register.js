@@ -22,7 +22,7 @@ export function Register() {
     if (emailRef.current.value === "") {
       toast.warn("mail is empty");
       return false;
-    } else if (emailRegex.test(emailRef.current.value)) {
+    } else if (!emailRegex.test(emailRef.current.value)) {
       toast.warn("Invalid mail");
       return false;
     } else if (nameRef.current.value === "") {
