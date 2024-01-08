@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { createContext } from "react";
-
+import { toast } from "react-toastify";
 export const bucket = createContext();
 
 function CreateStore(props) {
@@ -347,19 +347,21 @@ function CreateStore(props) {
     }
     setCartItemsCount(count);
 
-    console.log(cartItemCount);
   }, [cartItems]);
   // const [data, setData] = useState([]);
+  const isUserLoggedIn = () => localStorage.getItem("token") !== null;
 
   const addToCart = (itemid) => {
-    if (cartItems[itemid] === undefined) {
-      setCartItems({ ...cartItems, [itemid]: 1 });
-    } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] + 1 });
+    if (isUserLoggedIn()) {
+      console.log(isUserLoggedIn());
+      if (cartItems[itemid] === undefined) {
+        setCartItems({ ...cartItems, [itemid]: 1 });
+      } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] + 1 });
+    } else toast.warn("Please login to add to cart");
   };
   const removeFromCart = (itemid) => {
-    if (cartItems[itemid] === undefined) {
-      console.log("error");
-    } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] - 1 });
+    if (cartItems[itemid] !== undefined)
+      setCartItems({ ...cartItems, [itemid]: cartItems[itemid] - 1 });
   };
   return (
     <>

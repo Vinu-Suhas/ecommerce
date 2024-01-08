@@ -11,7 +11,6 @@ export const SearchBarHeader = () => {
   const { data } = useContext(bucket);
   const user = useHoverEffect();
   const handleSeatchField = (event) => {
-    console.log(event.target.value);
     if (event.target.value.toLowerCase() !== "") {
       setSearchData(
         data.filter((element) =>

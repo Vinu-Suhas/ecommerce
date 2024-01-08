@@ -12,13 +12,12 @@ export function Register() {
       axios
         .post("http://localhost:5000/api/register", formData)
         .then((response) => {
-          console.log("response after post login", response);
+          // console.log("response after post login", response);
         })
         .catch((error) => console.log("error", error));
     }
   };
   const handleVerification = () => {
-    console.log(emailRegex.test(emailRef.current.value));
     if (emailRef.current.value === "") {
       toast.warn("mail is empty");
       return false;

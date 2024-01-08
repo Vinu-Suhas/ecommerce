@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { createRef, useState } from "react";
 import "./Login.css";
 import { toast } from "react-toastify";
+import { NavLink } from "react-router-dom";
 
 export function Login() {
   const [formData, setFormData] = useState({});
@@ -14,7 +15,8 @@ export function Login() {
         .post("http://localhost:5000/api/login", formData)
         .then((response) => {
           if (response.status === 200)
-            localStorage.setItem("items", JSON.stringify(response.data.token));
+            localStorage.setItem("token", JSON.stringify(response.data.token));
+          toast.success("Login successful");
         })
         .catch((error) => console.log("error", error));
     }
@@ -69,6 +71,9 @@ export function Login() {
         <button onClick={() => handleSubmit()} type="button">
           Login
         </button>
+        <p>
+          Havent created account <NavLink to="/register">create here</NavLink>
+        </p>
       </form>
     </>
   );

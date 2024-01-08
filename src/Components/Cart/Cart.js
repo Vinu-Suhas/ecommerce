@@ -26,10 +26,10 @@ export const Cart = () => {
               <div className="cartItems">
                 <h2 style={{ textAlign: "center" }}>{element.name}</h2>
                 <img
-                  src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-x-new-1.jpg"
+                  src={element.imageLink}
                   style={{
-                    height: "17vh",
-                    width: "20vw",
+                    height: "25vh",
+                    width: "15vw",
                     justifyContent: "center",
                     alignContent: "center",
                     alignSelf: "center",
@@ -66,17 +66,17 @@ export const Cart = () => {
           <div
             className="cartItems"
             style={{
+              alignItems: "center",
               //   display: "flex",
               //   justifyContent: "center",
               //   flexDirection: "column",
-              alignItems: "center",
               //   border: "5px solid green",
               //   width: "40%",
             }}
           >
             <h2>Total:</h2>
             <p>Total Items: {cartItemCount}</p>
-            <hr style={{ color: "black"  }} />
+            <hr style={{ color: "black" }} />
             <p>Total Before Tax: {cartItemsPrice}</p>
             <p>Delivery Charges: 100</p>
             <p>GST: {cartItemsPrice * 0.18}</p>
