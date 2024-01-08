@@ -14,14 +14,12 @@ export default function ProductInfo() {
       <div className="productInfoDivider">
         <div className="productInfoDivider-1">
           <img
-            src={
-              "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/y/u/3/-original-imaggsuddwubypxp.jpeg?q=70"
-            }
+            src={product.imageLink}
             alt={product.name}
             style={{ maxWidth: "100%" }}
           />
         </div>
-        <div className="productInfoDivider-1">
+        <div className="productInfoDivider-2">
           <h3>Brand: {product.brand}</h3>
           <h3>Color: {product.color}</h3>
           <h3>Storage: {product.storage}</h3>

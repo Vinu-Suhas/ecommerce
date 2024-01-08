@@ -116,6 +116,44 @@ function CreateStore(props) {
       rating: 2,
       category: "smartphone",
     },
+    {
+      id: 10,
+      name: "Lenovo LOQ 15IRH8 Gaming Laptop",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/7/m/c/-original-imagtvudctd8grxy.jpeg?q=70",
+      storage: "512GB",
+      price: "66990",
+      category: "laptop",
+    },
+    {
+      id: 11,
+      name: "ASUS Vivobook 14",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/z/b/c/-original-imagtucnf8mszzhy.jpeg?q=70",
+
+      storage: "512GB",
+      price: "31990",
+      category: "laptop",
+    },
+    {
+      id: 11,
+      name: "ASUS Vivobook 15",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/n/m/h/x1502za-ej544ws-thin-and-light-laptop-asus-original-imagtxpgachxjzhm.jpeg?q=70",
+
+      storage: "512GB",
+      price: "65990",
+      category: "laptop",
+    },
+    {
+      id: 12,
+      name: "SAMSUNG Galaxy Book2 Pro",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/x/x/i/-original-imagupz9spjhhhtw.jpeg?q=70",
+      storage: "512GB",
+      price: "62390",
+      category: "laptop",
+    },
   ]);
   // useEffect(() => {
   //   axios

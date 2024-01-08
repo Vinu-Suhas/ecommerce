@@ -1,3 +1,12 @@
 .productInfoDivider {
   display: flex;
+  margin: 4rem;
+}
+
+.productInfoDivider-1 {
+  width: 20%;
+}
+.productInfoDivider-2 {
+  margin-left: 2rem;
+  width: 80%;
 }

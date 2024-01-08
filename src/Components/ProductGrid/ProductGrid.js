@@ -28,7 +28,6 @@ export function ProductGrid(props) {
       </h3>
       <h3>{props.storage}</h3>
       <button
-        // style={{ textDecoration: "none", color: "white", background: "green" }}
         onClick={() => {
           addToCart(props.id);
         }}

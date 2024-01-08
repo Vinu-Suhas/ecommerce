@@ -20,7 +20,25 @@ import { bucket } from "./Store/CreateStore";
 import { SearchBarHeader } from "./SearchBarHeader/SearchBarHeader";
 
 function RouterCompo() {
-  const { cartItemCount } = useContext(bucket);
+  const { cartItemCount, data } = useContext(bucket);
+  const getBrandsByCategory = (products) => {
+    const brandsByCategory = {};
+
+    products.forEach((product) => {
+      const { category, brand } = product;
+
+      if (!brandsByCategory[category]) {
+        brandsByCategory[category] = [];
+      }
+
+      if (!brandsByCategory[category].includes(brand)) {
+        brandsByCategory[category].push(brand);
+      }
+    });
+
+    return brandsByCategory;
+  };
+  const brandsByCategory = getBrandsByCategory(data);
 
   const hightlightButtons = ({ isActive }) => ({
     color: isActive ? "darkgreen" : "white",
@@ -29,6 +47,7 @@ function RouterCompo() {
   const Laptop = useHoverEffect();
   const Tablet = useHoverEffect();
   const Accessorie = useHoverEffect();
+
   return (
     <>
       <BrowserRouter>
@@ -47,9 +66,7 @@ function RouterCompo() {
                 Smartphones
               </NavLink>
               {Smartphone.isDropdownVisible && (
-                <DropdownMenu
-                  dataset={["Apple", "Samsung", "Asus", "Google"]}
-                />
+                <DropdownMenu dataset={brandsByCategory.smartphone} />
               )}
             </li>
             <NavLink style={hightlightButtons} to="/laptops">
@@ -110,8 +127,9 @@ function RouterCompo() {
               path="/smartphones"
               element={
                 <ProductsPage
-                  brands={["Samsung", "Google", "Oneplus", "Sony"]}
-                  category={'smartphone'}
+                  brands={brandsByCategory.smartphone}
+                  category={"smartphone"}
+                  brand={""}
                 />
               }
             />
