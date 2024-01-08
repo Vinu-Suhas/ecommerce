@@ -14,7 +14,8 @@ function CreateStore(props) {
       brand: "Samsung",
       color: "black",
       storage: "128GB",
-      imageLink: "https://example.com/samsung-galaxy-s21-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/d/o/r/-original-imagu4haetzha9bj.jpeg?q=70",
       price: "12000",
       rating: 3,
       category: "smartphone",
@@ -25,7 +26,8 @@ function CreateStore(props) {
       brand: "Google",
       color: "white",
       storage: "256GB",
-      imageLink: "https://example.com/google-pixel-5-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/s/y/0/-original-imaggbrbxkqr3v3u.jpeg?q=70",
       price: "25000",
       rating: 4,
       category: "smartphone",
@@ -36,7 +38,8 @@ function CreateStore(props) {
       brand: "OnePlus",
       color: "silver",
       storage: "256GB",
-      imageLink: "https://example.com/oneplus-9-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/j/n/y/-original-imagdhtmgbg6vyrd.jpeg?q=70",
       price: "25000",
       rating: 3.5,
       category: "smartphone",
@@ -47,7 +50,8 @@ function CreateStore(props) {
       brand: "Huawei",
       color: "gold",
       storage: "128GB",
-      imageLink: "https://example.com/huawei-p40-pro-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/j70sccw0/mobile/z/g/j/honor-8-pro-duke-l09-v100r001-original-imaexdy3pcegz3df.jpeg?q=70",
       price: "25000",
       rating: 2.5,
       category: "smartphone",
@@ -58,7 +62,8 @@ function CreateStore(props) {
       brand: "Xiaomi",
       color: "green",
       storage: "128GB",
-      imageLink: "https://example.com/xiaomi-mi-11-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/ky7lci80/mobile/e/j/x/-original-imagag2gatsxzcuv.jpeg?q=70",
       price: "25000",
       rating: 3,
       category: "smartphone",
@@ -69,7 +74,8 @@ function CreateStore(props) {
       brand: "Apple",
       color: "blue",
       storage: "256GB",
-      imageLink: "https://example.com/iphone-13-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/ktketu80/mobile/f/o/s/iphone-13-mlpf3hn-a-apple-original-imag6vzzemfy9nse.jpeg?q=70",
       price: "25000",
       rating: 3.6,
       category: "smartphone",
@@ -80,18 +86,20 @@ function CreateStore(props) {
       brand: "Sony",
       color: "purple",
       storage: "256GB",
-      imageLink: "https://example.com/sony-xperia-1-iii-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/jkbguq80/mobile/2/s/m/sony-xperia-xz2-na-original-imaf7zvvhuxxf7hf.jpeg?q=70",
       price: "25000",
       rating: 5,
       category: "smartphone",
     },
     {
       id: 8,
-      name: "Motorola Edge 20",
+      name: "Motorola Edge 30 Fusion",
       brand: "Motorola",
       color: "gray",
       storage: "128GB",
-      imageLink: "https://example.com/motorola-edge-20-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/g/q/o/-original-imagg34wnw7u5qne.jpeg?q=70",
       price: "25000",
       rating: 5,
       category: "smartphone",
@@ -102,7 +110,8 @@ function CreateStore(props) {
       brand: "LG",
       color: "silver",
       storage: "128GB",
-      imageLink: "https://example.com/lg-velvet-image.jpg",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/kgsb1jk0/mobile/h/r/e/lg-velvet-dual-screen-lmg910emw-original-imafwy7ytk8y3ucw.jpeg?q=70",
       price: "25000",
       rating: 2,
       category: "smartphone",

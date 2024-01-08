@@ -12,10 +12,7 @@ export function ProductGrid(props) {
         to={`/productinfo/${props.id}`}
         style={{ textDecoration: "none", color: "black" }}
       >
-        <img
-          src="https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-x-new-1.jpg"
-          style={{ height: "17vh" }}
-        />
+        <img src={props.img} style={{ height: "17vh" }} />
 
         <h2 className="black" style={{ textDecoration: "none" }}>
           {props.name}
