@@ -8,7 +8,6 @@ import ProductInfo from "./ProductInfo/ProductInfo";
 import Contact from "./Contact";
 import { Cart } from "./Cart/Cart";
 import ErrorPage from "./ErrorPage";
-import { Footer } from "./Footer";
 import { Register } from "./Register";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgClose, CgMenu } from "react-icons/cg";

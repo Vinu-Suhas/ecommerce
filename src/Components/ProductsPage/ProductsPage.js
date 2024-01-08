@@ -12,7 +12,8 @@ export function ProductsPage(props) {
     setProducts(
       data.filter((item) => item.category.toLowerCase() === props.category)
     );
-  }, [data]);
+    setBrandFilter("");
+  }, [props]);
 
   useEffect(() => {
     if (brandFilter === "") setNewData(products);
