@@ -27,6 +27,18 @@ export function ProductGrid(props) {
         )}
       </h3>
       <h3>{props.storage}</h3>
+      <h3>
+        <span
+          style={{
+            textDecoration: "line-through",
+            textDecorationThickness: "3px",
+            textDecorationColor: "red",
+          }}
+        >
+          ₹{parseInt(props.price) + 2000}
+        </span>
+        <span style={{ color: "red" }}> ₹{props.price}</span>
+      </h3>
       <button
         onClick={() => {
           addToCart(props.id);

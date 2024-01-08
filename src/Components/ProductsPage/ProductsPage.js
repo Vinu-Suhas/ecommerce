@@ -82,6 +82,7 @@ export function ProductsPage(props) {
               img={element.imageLink}
               key={index}
               rating={element.rating}
+              price={element.price}
             />
           );
         })}

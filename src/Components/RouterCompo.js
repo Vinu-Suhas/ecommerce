@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./Home/Home";
 import { ProductsPage } from "./ProductsPage/ProductsPage";
-import { Laptops } from "./Laptops";
 import { Tablets } from "./Tablets";
 import { Accessories } from "./Accessories";
 import ProductInfo from "./ProductInfo/ProductInfo";
@@ -129,7 +128,6 @@ function RouterCompo() {
                 <ProductsPage
                   brands={brandsByCategory.smartphone}
                   category={"smartphone"}
-                  brand={""}
                 />
               }
             />
@@ -139,7 +137,6 @@ function RouterCompo() {
                 <ProductsPage
                   brands={brandsByCategory.laptop}
                   category={"laptop"}
-                  brand={""}
                 />
               }
             />

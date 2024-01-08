@@ -78,6 +78,7 @@ export function Home({ newData }) {
               img={element.imageLink}
               key={index}
               rating={element.rating}
+              price={element.price}
             />
           );
         })}
@@ -145,6 +146,7 @@ export function Home({ newData }) {
               storage={element.storage}
               img={element.imageLink}
               key={index}
+              price={element.price}
             />
           );
         })}

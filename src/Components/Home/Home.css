@@ -9,6 +9,7 @@
   box-sizing: border-box;
   align-items: center;
   transition: 0.5s;
+  height: fit-content;
 }
 
 .feature h1,
@@ -27,8 +28,8 @@ h4 {
   translate: 0 -10px;
 }
 
-.featuredProducts{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.featuredProducts {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }

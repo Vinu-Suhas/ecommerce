@@ -24,7 +24,7 @@ export default function ProductInfo() {
           <h3>Color: {product.color}</h3>
           <h3>Storage: {product.storage}</h3>
           <h3>
-            Price:{" "}
+            Price:
             <span
               style={{
                 textDecoration: "line-through",
@@ -34,7 +34,7 @@ export default function ProductInfo() {
             >
               ₹{parseInt(product.price) + 2000}
             </span>
-            <span style={{ color: "red" }}>{product.price}</span>
+            <span style={{ color: "red" }}> ₹{product.price}</span>
           </h3>
           <h3>
             Rating :{product.rating}

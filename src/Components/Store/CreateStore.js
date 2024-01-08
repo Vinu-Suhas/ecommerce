@@ -125,6 +125,7 @@ function CreateStore(props) {
       storage: "512GB",
       price: "66990",
       category: "laptop",
+      rating: "3",
     },
     {
       id: 11,
@@ -136,6 +137,7 @@ function CreateStore(props) {
       brand: "Asus",
       price: "31990",
       category: "laptop",
+      rating: "4",
     },
     {
       id: 12,
@@ -147,6 +149,7 @@ function CreateStore(props) {
       brand: "Asus",
       price: "65990",
       category: "laptop",
+      rating: "5",
     },
     {
       id: 13,
@@ -157,6 +160,7 @@ function CreateStore(props) {
       brand: "Samsung",
       price: "62390",
       category: "laptop",
+      rating: "4.3",
     },
     {
       id: 14,
@@ -167,6 +171,18 @@ function CreateStore(props) {
       brand: "Apple",
       price: "62390",
       category: "laptop",
+      rating: "3.2",
+    },
+    {
+      id: 15,
+      name: "DELL New Inspiron 15 ",
+      brand: "DELL",
+      category: "laptop",
+      price: "62390",
+      storage: "512GB",
+      rating: "3",
+      imageLink:
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/computer/n/o/s/-original-imaghzah9mjvukjz.jpeg?q=70",
     },
   ]);
   // useEffect(() => {
