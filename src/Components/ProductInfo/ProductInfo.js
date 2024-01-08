@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { bucket } from "../Store/CreateStore";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+
 import "./ProductInfo.css";
 export default function ProductInfo() {
   const productId = useParams().id;
@@ -20,11 +22,18 @@ export default function ProductInfo() {
           />
         </div>
         <div className="productInfoDivider-1">
-          <p>Brand: {product.brand}</p>
-          <p>Color: {product.color}</p>
-          <p>Storage: {product.storage}</p>
-          <p>Price: {product.price}</p>
-          <p>Rating: {product.rating}</p>
+          <h3>Brand: {product.brand}</h3>
+          <h3>Color: {product.color}</h3>
+          <h3>Storage: {product.storage}</h3>
+          <h3>Price: ₹{product.price}</h3>
+          <h3>
+            Rating :{product.rating}
+            {parseInt(product.rating) === product.rating ? (
+              <FaStar />
+            ) : (
+              <FaStarHalfAlt />
+            )}
+          </h3>
           <p>
             Experience smooth operation and brilliant user interface with the
             5G-ready Google Pixel 7 smartphone that comes loaded with innovative
