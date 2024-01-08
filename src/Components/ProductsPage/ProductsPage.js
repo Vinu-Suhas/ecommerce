@@ -6,6 +6,7 @@ export function ProductsPage(props) {
   const [newData, setNewData] = useState([]);
   const [filter, setFilter] = useState("");
   const { data } = useContext(bucket);
+
   useEffect(() => {
     if (filter === "") setNewData(data);
     else {
@@ -27,11 +28,22 @@ export function ProductsPage(props) {
         >
           FILTER
         </h1>
-        <h3 onClick={() => setFilter("Samsung")}>Samsung</h3>
-        <h3 onClick={() => setFilter("Google")}>Google</h3>
-        <h3 onClick={() => setFilter("Oneplus")}>Oneplus</h3>
-        <h3 onClick={() => setFilter("Sony")}>Sony</h3>
-        <h3 onClick={() => setFilter("")}>Clear</h3>
+        <div>
+          {props.brands.map((element, index) => {
+            return (
+              <h3
+                key={index}
+                style={{ textAlign: "center" }}
+                onClick={() => setFilter(element)}
+              >
+                {element}
+              </h3>
+            );
+          })}
+          <h3 style={{ textAlign: "center" }} onClick={() => setFilter("")}>
+            Clear
+          </h3>
+        </div>
       </div>
       <div
         style={{
