@@ -111,6 +111,7 @@ function RouterCompo() {
               element={
                 <ProductsPage
                   brands={["Samsung", "Google", "Oneplus", "Sony"]}
+                  category={'smartphone'}
                 />
               }
             />

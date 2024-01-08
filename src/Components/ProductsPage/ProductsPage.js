@@ -4,20 +4,36 @@ import { bucket } from "../Store/CreateStore";
 
 export function ProductsPage(props) {
   const [newData, setNewData] = useState([]);
-  const [filter, setFilter] = useState("");
+  const [products, setProducts] = useState([]);
+  const [brandFilter, setBrandFilter] = useState("");
   const { data } = useContext(bucket);
 
   useEffect(() => {
-    if (filter === "") setNewData(data);
+    setProducts(
+      data.filter((item) => item.category.toLowerCase() === props.category)
+    );
+  }, [data]);
+
+  useEffect(() => {
+    if (brandFilter === "") setNewData(data);
     else {
       setNewData(
-        data.filter((item) => item.brand.toLowerCase() === filter.toLowerCase())
+        products.filter(
+          (item) => item.brand.toLowerCase() === brandFilter.toLowerCase()
+        )
       );
+      console.log(products);
     }
-  }, [data, filter]);
+  }, [products, brandFilter]);
   return (
-    <div style={{ display: "flex" }}>
-      <div style={{ width: "15%", border: "5px solid green" }}>
+    <div style={{ display: "flex", margin: "2rem" }}>
+      <div
+        style={{
+          width: "15%",
+          border: "5px solid green",
+          borderRadius: "16px",
+        }}
+      >
         <h1
           style={{
             margin: "0",
@@ -34,13 +50,16 @@ export function ProductsPage(props) {
               <h3
                 key={index}
                 style={{ textAlign: "center" }}
-                onClick={() => setFilter(element)}
+                onClick={() => setBrandFilter(element)}
               >
                 {element}
               </h3>
             );
           })}
-          <h3 style={{ textAlign: "center" }} onClick={() => setFilter("")}>
+          <h3
+            style={{ textAlign: "center" }}
+            onClick={() => setBrandFilter("")}
+          >
             Clear
           </h3>
         </div>
