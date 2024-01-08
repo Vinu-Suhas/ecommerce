@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProductGrid } from "../ProductGrid/ProductGrid";
 import { bucket } from "../Store/CreateStore";
-
+import "./ProductPage.css";
 export function ProductsPage(props) {
   const [newData, setNewData] = useState([]);
   const [products, setProducts] = useState([]);
@@ -13,7 +13,7 @@ export function ProductsPage(props) {
       data.filter((item) => item.category.toLowerCase() === props.category)
     );
     setBrandFilter("");
-  }, [props]);
+  }, [props.category]);
 
   useEffect(() => {
     if (brandFilter === "") setNewData(products);
@@ -27,23 +27,8 @@ export function ProductsPage(props) {
   }, [products, brandFilter]);
   return (
     <div style={{ display: "flex", margin: "2rem" }}>
-      <div
-        style={{
-          width: "15%",
-          border: "5px solid green",
-          borderRadius: "16px",
-        }}
-      >
-        <h1
-          style={{
-            margin: "0",
-            textAlign: "center",
-            borderTop: "5px solid green",
-            borderBottom: "5px solid green",
-          }}
-        >
-          FILTER
-        </h1>
+      <div className="filterBoxContainer">
+        <h1 className="filterTitle">FILTER</h1>
         <div>
           {props.brands.map((element, index) => {
             return (
@@ -64,14 +49,7 @@ export function ProductsPage(props) {
           </h3>
         </div>
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexWrap: "wrap",
-          width: "85%",
-        }}
-      >
+      <div className="productDisplayContainer">
         {newData.map((element, index) => {
           return (
             <ProductGrid

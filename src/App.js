@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import RouterCompo from "./Components/RouterCompo";
-import { Footer } from "./Components/Footer";
+import { Footer } from "./Components/Footer/Footer";
 import { CreateStore } from "./Components/Store/CreateStore";
 
 function App() {

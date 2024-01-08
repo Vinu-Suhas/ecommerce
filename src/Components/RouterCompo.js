@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./Home/Home";
 import { ProductsPage } from "./ProductsPage/ProductsPage";
-import { Tablets } from "./Tablets";
-import { Accessories } from "./Accessories";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import Contact from "./Contact";
 import { Cart } from "./Cart/Cart";
@@ -78,32 +76,28 @@ function RouterCompo() {
                 <DropdownMenu dataset={brandsByCategory.laptop} />
               )}
             </li>
-            <NavLink style={hightlightButtons} to="/tablets">
-              <li
-                onMouseEnter={Tablet.handleMouseEnter}
-                onMouseLeave={Tablet.handleMouseLeave}
-              >
+            <li
+              onMouseEnter={Tablet.handleMouseEnter}
+              onMouseLeave={Tablet.handleMouseLeave}
+            >
+              <NavLink style={hightlightButtons} to="/tablets">
                 Tablets
-                {Tablet.isDropdownVisible && (
-                  <DropdownMenu
-                    dataset={["Apple", "Google", "Samsung", "Xiaomi"]}
-                  />
-                )}
-              </li>
-            </NavLink>
-            <NavLink style={hightlightButtons} to="/accessories">
-              <li
-                onMouseEnter={Accessorie.handleMouseEnter}
-                onMouseLeave={Accessorie.handleMouseLeave}
-              >
+              </NavLink>
+              {Tablet.isDropdownVisible && (
+                <DropdownMenu dataset={brandsByCategory.tablet} />
+              )}
+            </li>
+            <li
+              onMouseEnter={Accessorie.handleMouseEnter}
+              onMouseLeave={Accessorie.handleMouseLeave}
+            >
+              <NavLink style={hightlightButtons} to="/accessories">
                 Accessories
-                {Accessorie.isDropdownVisible && (
-                  <DropdownMenu
-                    dataset={["Apple", "Boat", "Samsung", "Anker"]}
-                  />
-                )}
-              </li>
-            </NavLink>
+              </NavLink>
+              {Accessorie.isDropdownVisible && (
+                <DropdownMenu dataset={brandsByCategory.accessories} />
+              )}
+            </li>
             <NavLink
               style={hightlightButtons}
               to="/cart"
@@ -139,8 +133,24 @@ function RouterCompo() {
                 />
               }
             />
-            <Route path="/tablets" element={<Tablets />} />
-            <Route path="/accessories" element={<Accessories />} />
+            <Route
+              path="/tablets"
+              element={
+                <ProductsPage
+                  brands={brandsByCategory.tablet}
+                  category={"tablet"}
+                />
+              }
+            />
+            <Route
+              path="/accessories"
+              element={
+                <ProductsPage
+                  brands={brandsByCategory.accessories}
+                  category={"accessories"}
+                />
+              }
+            />
             <Route path="/productinfo/:id" element={<ProductInfo />} />
             <Route path="/contactus" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />

@@ -1,0 +1,20 @@
+.filterBoxContainer {
+  width: 15%;
+  border: 5px solid green;
+  border-radius: 16px;
+  height: fit-content;
+}
+
+.productDisplayContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 85%;
+}
+
+.filterTitle {
+  margin: 0px;
+  text-align: center;
+  border-top: 5px solid green;
+  border-bottom: 5px solid green;
+}
