@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { createRef, useState } from "react";
+import "./Login.css";
 // console.log(event.target.value)
 export function Login() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
   const passwordRef = createRef();
   const handleSubmit = () => {
-    console.log(formData);
     if (handleVerification()) {
       axios
         .post("http://localhost:5000/api/login", formData)
@@ -29,13 +29,12 @@ export function Login() {
     //used in instead of direct because only 1 field data is saved
     formData[event.target.name] = event.target.value;
     setFormData(formData);
-    // console.log(formData);
   };
   return (
     <>
       <form className="formContainer">
         <label>
-          Emailw
+          Email
           <input
             type="email"
             name="email"

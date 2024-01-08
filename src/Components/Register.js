@@ -6,7 +6,6 @@ export function Register() {
   const passwordRef = createRef();
   const nameRef = createRef();
   const handleSubmit = () => {
-    // console.log(formData);
     if (handleVerification()) {
       axios
         .post("http://localhost:5000/api/register", formData)

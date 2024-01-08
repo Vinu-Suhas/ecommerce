@@ -9,7 +9,7 @@ import ErrorPage from "./ErrorPage";
 import { Register } from "./Register";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgClose, CgMenu } from "react-icons/cg";
-import { Login } from "./Login";
+import { Login } from "./Login/Login";
 import { useHoverEffect } from "./CustomHook/useHoverEffect";
 import { DropdownMenu } from "./DropdownMenu";
 import { bucket } from "./Store/CreateStore";
