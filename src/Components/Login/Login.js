@@ -1,18 +1,18 @@
 import axios from "axios";
 import React, { createRef, useState } from "react";
 import "./Login.css";
-// console.log(event.target.value)
+import { toast } from "react-toastify";
+
 export function Login() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRef = createRef();
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
         .post("http://localhost:5000/api/login", formData)
         .then((response) => {
-          //     console.log(response)
-          //   console.log(response.data);
           if (response.status === 200)
             localStorage.setItem("items", JSON.stringify(response.data.token));
         })
@@ -20,8 +20,17 @@ export function Login() {
     }
   };
   const handleVerification = () => {
-    if (passwordRef.current.value === "") return false;
-    if (emailRef.current.value === "") return false;
+    if (emailRef.current.value === "") {
+      toast.warn("mail is empty");
+      return false;
+    } else if (emailRegex.test(emailRef.current.value)) {
+      toast.warn("Invalid mail");
+      return false;
+    } else if (passwordRef.current.value === "") {
+      toast.warn("password invalid");
+      return false;
+    }
+
     return true;
   };
   const handleChange = (event) => {

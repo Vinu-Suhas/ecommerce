@@ -1,10 +1,12 @@
 import axios from "axios";
 import React, { createRef, useState } from "react";
+import { toast } from "react-toastify";
 export function Register() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
   const passwordRef = createRef();
   const nameRef = createRef();
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
@@ -16,9 +18,24 @@ export function Register() {
     }
   };
   const handleVerification = () => {
-    if (nameRef.current.value === "") return false;
-    if (passwordRef.current.value === "") return false;
-    if (emailRef.current.value === "") return false;
+    console.log(emailRegex.test(emailRef.current.value));
+    if (emailRef.current.value === "") {
+      toast.warn("mail is empty");
+      return false;
+    } else if (emailRegex.test(emailRef.current.value)) {
+      toast.warn("Invalid mail");
+      return false;
+    } else if (nameRef.current.value === "") {
+      toast.warn("Name is empty");
+      return false;
+    } else if (passwordRef.current.value === "") {
+      toast.warn("Password is empty");
+      return false;
+    } else if (passwordRef.current.value.length > 7) {
+      toast.warn("min password length should be 8");
+      return false;
+    }
+
     return true;
   };
   const handleChange = (event) => {
