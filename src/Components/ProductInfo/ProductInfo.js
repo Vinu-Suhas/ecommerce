@@ -6,8 +6,9 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import "./ProductInfo.css";
 export default function ProductInfo() {
   const productId = useParams().id;
-  const { data } = useContext(bucket);
+  const { data ,addToCart,cartItems,removeFromCart } = useContext(bucket);
   const product = data.find((item) => item.id === parseInt(productId));
+  const cartAmount = cartItems[product.id] ?? 0;
   return (
     <div className="product-info-container">
       <h2 style={{ textAlign: "center" }}>{product.name}</h2>
@@ -56,10 +57,22 @@ export default function ProductInfo() {
             with rich, vivid colours. And it's fast and responsive for smoother
             gaming, scrolling, and moving between apps.{" "}
           </p>
+          <>
+          {cartAmount == 0 ? (
+  <button
+  className="pi-buttons"
+    onClick={() => addToCart(product.id)}
+  >
+    Buy now
+  </button>
+) : (
+ <><button  className="pi-buttons" onClick={() => addToCart(product.id)}> + </button> {cartAmount} <button  className="pi-buttons" onClick={() => removeFromCart(product.id)}>-</button></>
+)}
+
+          </>
         </div>
       </div>
 
-      {/* Add more details as needed */}
     </div>
   );
 }

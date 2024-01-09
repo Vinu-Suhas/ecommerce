@@ -61,6 +61,7 @@ export const SearchBarHeader = () => {
             return (
               <div key={index} className="searchProductData">
                 <span>{element.name}</span>
+                <img src={element.imageLink} style={{height:"6vh",width:"6vw"}}/>
                 <span>{element.price}</span>
                 <span>
                   Rating :{element.rating}
@@ -71,7 +72,7 @@ export const SearchBarHeader = () => {
                   )}
                 </span>
                 <Link to={`/productinfo/${element.id}`}>
-                  <span>More info {element.id}</span>
+                  <span>More info</span>
                 </Link>
               </div>
             );

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { bucket } from "../Store/CreateStore";
 import "./cart.css";
+// import { PaymentGateway } from "../PaymentGateway/PaymentGateway";
 export const Cart = () => {
   const [filteredItems, setFilteredItems] = useState([]);
   const [cartItemsPrice, setCartItemsPrice] = useState(0);
@@ -92,6 +93,7 @@ export const Cart = () => {
             >
               Checkout
             </button>
+
           </div>
         </>
       )}

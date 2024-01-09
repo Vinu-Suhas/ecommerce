@@ -42,7 +42,7 @@ export function ProductsPage(props) {
             );
           })}
           <h3
-            style={{ textAlign: "center" }}
+            style={{ textAlign: "center" ,color:"red"}}
             onClick={() => setBrandFilter("")}
           >
             Clear

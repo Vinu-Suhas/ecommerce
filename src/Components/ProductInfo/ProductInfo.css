@@ -10,3 +10,12 @@
   margin-left: 2rem;
   width: 80%;
 }
+
+.pi-buttons{
+  background: green;
+  color: white;
+  border-radius: 16px;
+  padding: 10px;
+  font-weight: bold;
+  min-width: 4rem;
+}
