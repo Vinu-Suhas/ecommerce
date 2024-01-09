@@ -2,13 +2,14 @@ import axios from "axios";
 import React, { createRef, useState } from "react";
 import "./Login.css";
 import { toast } from "react-toastify";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function Login() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRef = createRef();
+  const nav=useNavigate()
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
@@ -17,6 +18,8 @@ export function Login() {
           if (response.status === 200)
             localStorage.setItem("token", JSON.stringify(response.data.token));
           toast.success("Login successful");
+          nav('/')
+
         })
         .catch((error) => console.log("error", error));
     }
@@ -72,7 +75,7 @@ export function Login() {
           Login
         </button>
         <p>
-          Havent created account <NavLink to="/register">create here</NavLink>
+          Havent created account? <NavLink to="/register">create here</NavLink>
         </p>
       </form>
     </>
