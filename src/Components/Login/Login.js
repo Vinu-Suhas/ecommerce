@@ -1,14 +1,16 @@
 import axios from "axios";
-import React, { createRef, useState } from "react";
+import React, { createContext, createRef, useState } from "react";
 import "./Login.css";
 import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
+import { bucket } from "../Store/CreateStore";
 
 export function Login() {
   const [formData, setFormData] = useState({});
   const emailRef = createRef();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRef = createRef();
+  const {  hasUserLoggedIn,setHasUserLoggedIn} =createContext(bucket)
   const nav=useNavigate()
   const handleSubmit = () => {
     if (handleVerification()) {
@@ -16,6 +18,8 @@ export function Login() {
         .post("http://localhost:5000/api/login", formData)
         .then((response) => {
           if (response.status === 200)
+          setHasUserLoggedIn(true)
+          console.log(hasUserLoggedIn)
             localStorage.setItem("token", JSON.stringify(response.data.token));
           toast.success("Login successful");
           nav('/')

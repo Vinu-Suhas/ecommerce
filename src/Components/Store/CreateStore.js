@@ -9,6 +9,7 @@ function CreateStore(props) {
   const [cartItems, setCartItems] = useState({});
   const [data, setData] = useState([]);
   const [brandsByCategory,setBrandsByCategory] =useState({})
+  const [hasUserLoggedIn,setHasUserLoggedIn] =useState(false)
   useEffect(() => {
     axios
       .get("https://react-project2-backend-vinu.onrender.com/data")
@@ -54,11 +55,14 @@ function CreateStore(props) {
 
   const addToCart = (itemid) => {
     if (isUserLoggedIn()) {
-      console.log(isUserLoggedIn());
+      setHasUserLoggedIn(true)
       if (cartItems[itemid] === undefined) {
         setCartItems({ ...cartItems, [itemid]: 1 });
       } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] + 1 });
-    } else toast.warn("Please login to add to cart");
+    } else{
+      
+      setHasUserLoggedIn(false)
+      toast.warn("Please login to add to cart");}
   };
   const removeFromCart = (itemid) => {
     if (cartItems[itemid] !== undefined)
@@ -74,7 +78,9 @@ function CreateStore(props) {
           cartItems,
           removeFromCart,
           cartItemCount,
-          brandsByCategory
+          brandsByCategory,
+          setHasUserLoggedIn,
+          hasUserLoggedIn
         }}
       >
         {props.children}

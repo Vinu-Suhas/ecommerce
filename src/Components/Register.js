@@ -12,9 +12,9 @@ export function Register() {
       axios
         .post("http://localhost:5000/api/register", formData)
         .then((response) => {
-          // console.log("response after post login", response);
+          toast.success("Registration successful");
         })
-        .catch((error) => console.log("error", error));
+        .catch((error) =>toast.error(error.msg));
     }
   };
   const handleVerification = () => {
@@ -30,7 +30,8 @@ export function Register() {
     } else if (passwordRef.current.value === "") {
       toast.warn("Password is empty");
       return false;
-    } else if (passwordRef.current.value.length > 7) {
+    } else if (passwordRef.current.value.length < 7) {
+      console.log("password ")
       toast.warn("min password length should be 8");
       return false;
     }

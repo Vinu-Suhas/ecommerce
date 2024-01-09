@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import "./ProductGrid.css";
 export function ProductGrid(props) {
-  const { addToCart, cartItems } = useContext(bucket);
+  const { addToCart, cartItems,removeFromCart } = useContext(bucket);
   const cartAmount = cartItems[props.id] ?? 0;
   return (
     <div className="productContainer">
@@ -39,13 +39,24 @@ export function ProductGrid(props) {
         </span>
         <span style={{ color: "red" }}> ₹{props.price}</span>
       </h3>
-      <button
+      {/* <button
         onClick={() => {
           addToCart(props.id);
         }}
       >
-        Buy now {cartAmount > 0 && <>({cartAmount})</>}
-      </button>
+        Buy now {cartAmount > 0 && <>({cartAmount})</>} 
+      </button>*/}
+      {cartAmount == 0 ? (
+  <button
+  className="pi-buttons"
+    onClick={() => addToCart(props.id)}
+  >
+    Buy now
+  </button>
+) : (
+ <div style={{ display:"flex" ,justifyContent:"space-evenly"}}> <button  className="pi-buttons"  onClick={() => addToCart(props.id)}  style={{marginRight:"1rem" ,transition:"1s"}}> + </button> {cartAmount} <button  className="pi-buttons" style={{marginLeft:"1rem",transition:"1s"}}   onClick={() => removeFromCart(props.id)}>-</button></div>
+)}
+      
     </div>
   );
 }
