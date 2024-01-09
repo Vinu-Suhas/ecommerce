@@ -16,25 +16,25 @@ import { bucket } from "./Store/CreateStore";
 import { SearchBarHeader } from "./SearchBarHeader/SearchBarHeader";
 
 function RouterCompo() {
-  const { cartItemCount, data } = useContext(bucket);
-  const getBrandsByCategory = (products) => {
-    const brandsByCategory = {};
+  const { cartItemCount, data ,brandsByCategory} = useContext(bucket);
+  // const getBrandsByCategory = (products) => {
+  //   const brandsByCategory = {};
 
-    products.forEach((product) => {
-      const { category, brand } = product;
+  //   products.forEach((product) => {
+  //     const { category, brand } = product;
 
-      if (!brandsByCategory[category]) {
-        brandsByCategory[category] = [];
-      }
+  //     if (!brandsByCategory[category]) {
+  //       brandsByCategory[category] = [];
+  //     }
 
-      if (!brandsByCategory[category].includes(brand)) {
-        brandsByCategory[category].push(brand);
-      }
-    });
+  //     if (!brandsByCategory[category].includes(brand)) {
+  //       brandsByCategory[category].push(brand);
+  //     }
+  //   });
 
-    return brandsByCategory;
-  };
-  const brandsByCategory = getBrandsByCategory(data);
+  //   return brandsByCategory;
+  // };
+  // const brandsByCategory = getBrandsByCategory(data);
 
   const hightlightButtons = ({ isActive }) => ({
     color: isActive ? "darkgreen" : "white",

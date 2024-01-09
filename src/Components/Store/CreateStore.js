@@ -8,6 +8,7 @@ function CreateStore(props) {
   const [cartItemCount, setCartItemsCount] = useState(0);
   const [cartItems, setCartItems] = useState({});
   const [data, setData] = useState([]);
+  const [brandsByCategory,setBrandsByCategory] =useState({})
   useEffect(() => {
     axios
       .get("https://react-project2-backend-vinu.onrender.com/data")
@@ -18,6 +19,28 @@ function CreateStore(props) {
         console.log(error);
       });
   },[]);
+
+
+  useEffect(()=>{
+    const getBrandsByCategory = (data) => {
+      const brandsByCategory = {};
+  
+      data.forEach((product) => {
+        const { category, brand } = product;
+  
+        if (!brandsByCategory[category]) {
+          brandsByCategory[category] = [];
+        }
+  
+        if (!brandsByCategory[category].includes(brand)) {
+          brandsByCategory[category].push(brand);
+        }
+      });
+  
+      return brandsByCategory;
+    };
+    setBrandsByCategory(getBrandsByCategory(data));
+  },[data])
   useEffect(() => {
     let count = 0;
     for (const value of Object.values(cartItems)) {
@@ -51,6 +74,7 @@ function CreateStore(props) {
           cartItems,
           removeFromCart,
           cartItemCount,
+          brandsByCategory
         }}
       >
         {props.children}
