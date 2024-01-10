@@ -18,7 +18,7 @@ export function Login() {
         .post("https://react-project2-backend-vinu.onrender.com/api/login", formData)
         .then((response) => {
           if (response.status === 200)
-          setHasUserLoggedIn(true)
+          // setHasUserLoggedIn(true)
           console.log(hasUserLoggedIn)
             localStorage.setItem("token", JSON.stringify(response.data.token));
           toast.success("Login successful");
