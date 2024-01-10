@@ -15,7 +15,7 @@ export function Login() {
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
-        .post("http://localhost:5000/api/login", formData)
+        .post("https://react-project2-backend-vinu.onrender.com/api/login", formData)
         .then((response) => {
           if (response.status === 200)
           setHasUserLoggedIn(true)

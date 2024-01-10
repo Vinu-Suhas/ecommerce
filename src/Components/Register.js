@@ -10,7 +10,7 @@ export function Register() {
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
-        .post("http://localhost:5000/api/register", formData)
+        .post("https://react-project2-backend-vinu.onrender.com/api/register", formData)
         .then((response) => {
           toast.success("Registration successful");
         })
