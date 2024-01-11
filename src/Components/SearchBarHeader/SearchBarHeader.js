@@ -8,7 +8,7 @@ import { useHoverEffect } from "../CustomHook/useHoverEffect";
 import { DropdownMenu } from "../DropdownMenu";
 export const SearchBarHeader = () => {
   const [searchData, setSearchData] = useState([]);
-  const { data,hasUserLoggedIn } = useContext(bucket);
+  const { data, hasUserLoggedIn } = useContext(bucket);
   const user = useHoverEffect();
   const handleSeatchField = (event) => {
     if (event.target.value.toLowerCase() !== "") {
@@ -39,20 +39,24 @@ export const SearchBarHeader = () => {
                 position: "absolute",
                 top: "33px",
                 right: "8px",
-                background: "#04aa6d",
+                background: "#3e8e41",
                 borderRadius: "16px",
                 zIndex: "34",
                 padding: "1rem",
               }}
             >
-          {!hasUserLoggedIn?  (  <>
-                <NavLink to="/login">
-                <h3 style={{ margin: "0" }}>Login</h3>
-              </NavLink>
-              <NavLink to="/register">
-                <h3 style={{ margin: "0" }}>Register</h3>
-              </NavLink>
-              </>):  <h3 style={{ margin: "0" }}>Log out</h3>}
+              {!hasUserLoggedIn ? (
+                <>
+                  <NavLink to="/login">
+                    <h3 style={{ margin: "0" }}>Login</h3>
+                  </NavLink>
+                  <NavLink to="/register">
+                    <h3 style={{ margin: "0" }}>Register</h3>
+                  </NavLink>
+                </>
+              ) : (
+                <h3 style={{ margin: "0" }}>Log out</h3>
+              )}
             </div>
           )}
         </div>
@@ -63,7 +67,10 @@ export const SearchBarHeader = () => {
             return (
               <div key={index} className="searchProductData">
                 <span>{element.name}</span>
-                <img src={element.imageLink} style={{height:"6vh",width:"6vw"}}/>
+                <img
+                  src={element.imageLink}
+                  style={{ height: "6vh", width: "6vw" }}
+                />
                 <span>{element.price}</span>
                 <span>
                   Rating :{element.rating}

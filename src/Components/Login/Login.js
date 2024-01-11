@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, createRef, useState } from "react";
+import React, { useContext, createRef, useState } from "react";
 import "./Login.css";
 import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -10,20 +10,22 @@ export function Login() {
   const emailRef = createRef();
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRef = createRef();
-  const {  hasUserLoggedIn,setHasUserLoggedIn} =createContext(bucket)
-  const nav=useNavigate()
+  const { hasUserLoggedIn, setHasUserLoggedIn } = useContext(bucket);
+  const nav = useNavigate();
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
-        .post("https://react-project2-backend-vinu.onrender.com/api/login", formData)
+        .post(
+          "https://react-project2-backend-vinu.onrender.com/api/login",
+          formData
+        )
         .then((response) => {
-          if (response.status === 200)
-          // setHasUserLoggedIn(true)
-          console.log(hasUserLoggedIn)
+          if (response.status === 200) {
             localStorage.setItem("token", JSON.stringify(response.data.token));
-          toast.success("Login successful");
-          nav('/')
-
+            toast.success("Login successful");
+            setHasUserLoggedIn(true);
+            nav("/");
+          }
         })
         .catch((error) => console.log("error", error));
     }

@@ -8,8 +8,8 @@ function CreateStore(props) {
   const [cartItemCount, setCartItemsCount] = useState(0);
   const [cartItems, setCartItems] = useState({});
   const [data, setData] = useState([]);
-  const [brandsByCategory,setBrandsByCategory] =useState({})
-  const [hasUserLoggedIn,setHasUserLoggedIn] =useState(false)
+  const [brandsByCategory, setBrandsByCategory] = useState({});
+  const [hasUserLoggedIn, setHasUserLoggedIn] = useState(false);
   useEffect(() => {
     axios
       .get("https://react-project2-backend-vinu.onrender.com/data")
@@ -19,50 +19,48 @@ function CreateStore(props) {
       .catch(function (error) {
         console.log(error);
       });
-  },[]);
+  }, []);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     const getBrandsByCategory = (data) => {
       const brandsByCategory = {};
-  
+
       data.forEach((product) => {
         const { category, brand } = product;
-  
+
         if (!brandsByCategory[category]) {
           brandsByCategory[category] = [];
         }
-  
+
         if (!brandsByCategory[category].includes(brand)) {
           brandsByCategory[category].push(brand);
         }
       });
-  
+
       return brandsByCategory;
     };
     setBrandsByCategory(getBrandsByCategory(data));
-  },[data])
+  }, [data]);
   useEffect(() => {
     let count = 0;
     for (const value of Object.values(cartItems)) {
       count += value;
     }
     setCartItemsCount(count);
-
   }, [cartItems]);
   // const [data, setData] = useState([]);
   const isUserLoggedIn = () => localStorage.getItem("token") !== null;
 
   const addToCart = (itemid) => {
     if (isUserLoggedIn()) {
-      setHasUserLoggedIn(true)
+      setHasUserLoggedIn(true);
       if (cartItems[itemid] === undefined) {
         setCartItems({ ...cartItems, [itemid]: 1 });
       } else setCartItems({ ...cartItems, [itemid]: cartItems[itemid] + 1 });
-    } else{
-      
-      setHasUserLoggedIn(false)
-      toast.warn("Please login to add to cart");}
+    } else {
+      setHasUserLoggedIn(false);
+      toast.warn("Please login to add to cart");
+    }
   };
   const removeFromCart = (itemid) => {
     if (cartItems[itemid] !== undefined)
@@ -72,6 +70,7 @@ function CreateStore(props) {
     <>
       <bucket.Provider
         value={{
+          setHasUserLoggedIn,
           data,
           setData,
           addToCart,
@@ -79,8 +78,7 @@ function CreateStore(props) {
           removeFromCart,
           cartItemCount,
           brandsByCategory,
-          setHasUserLoggedIn,
-          hasUserLoggedIn
+          hasUserLoggedIn,
         }}
       >
         {props.children}
