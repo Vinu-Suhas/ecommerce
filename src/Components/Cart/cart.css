@@ -1,5 +1,5 @@
 .cartItems {
-  width: 60%;
+  width: 75%;
   /* border: 5px solid green; */
   border-radius: 16px;
   display: flex;
@@ -13,17 +13,22 @@
 
 .cartImage {
   height: 28vh;
-  width: 15vw;
+  width: 13vw;
   place-content: center;
   align-self: center;
 }
 
-/* .cartItems-p1{
+.cartItems-p1 {
+  display: flex;
+}
 
-} */
+.cartItems-p1 h2 {
+  margin-left: 5rem;
+  width: 15rem;
+}
 
 .cartTitle {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: space-evenly;
   margin-left: auto;

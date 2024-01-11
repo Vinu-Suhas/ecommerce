@@ -24,17 +24,17 @@ export const Cart = () => {
         <>
           <div className="cartTitle">
             <h2>Product</h2>
-            <h2>Price</h2>
+            <h2 style={{ marginLeft: "17rem" }}>Price</h2>
             <h2>Quanity</h2>
-            <h2>Total</h2>
+            {/* <h2>Total</h2> */}
           </div>
           {filteredItems.map((element, index) => {
             return (
               <div className="cartItems">
                 <div className="cartItems-p1">
                   <img src={element.imageLink} className="cartImage" />
+                  <h2>{element.name}</h2>
                 </div>
-                <h2>{element.name}</h2>
 
                 <h3>{element.price}</h3>
                 <div
@@ -42,6 +42,8 @@ export const Cart = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    marginTop: "-6rem",
+                    marginRight: "4rem",
                   }}
                 >
                   <button
