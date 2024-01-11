@@ -77,6 +77,7 @@ function CreateStore(props) {
           setData,
           addToCart,
           cartItems,
+          setCartItems,
           removeFromCart,
           cartItemCount,
           brandsByCategory,
