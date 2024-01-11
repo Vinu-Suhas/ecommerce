@@ -8,7 +8,7 @@ import { useHoverEffect } from "../CustomHook/useHoverEffect";
 import { DropdownMenu } from "../DropdownMenu";
 export const SearchBarHeader = () => {
   const [searchData, setSearchData] = useState([]);
-  const { data, hasUserLoggedIn } = useContext(bucket);
+  const { data, hasUserLoggedIn, handleLogout } = useContext(bucket);
   const user = useHoverEffect();
   const handleSeatchField = (event) => {
     if (event.target.value.toLowerCase() !== "") {
@@ -55,7 +55,15 @@ export const SearchBarHeader = () => {
                   </NavLink>
                 </>
               ) : (
-                <h3 style={{ margin: "0" }}>Log out</h3>
+                <h3
+                  style={{ margin: "0" }}
+                  onClick={() => {
+                    handleLogout();
+                    toast.success("Logout successful");
+                  }}
+                >
+                  Log out
+                </h3>
               )}
             </div>
           )}

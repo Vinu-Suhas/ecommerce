@@ -51,6 +51,7 @@ function CreateStore(props) {
   // const [data, setData] = useState([]);
   const isUserLoggedIn = () => localStorage.getItem("token") !== null;
 
+  const handleLogout = () => localStorage.removeItem("token");
   const addToCart = (itemid) => {
     if (isUserLoggedIn()) {
       setHasUserLoggedIn(true);
@@ -66,6 +67,7 @@ function CreateStore(props) {
     if (cartItems[itemid] !== undefined)
       setCartItems({ ...cartItems, [itemid]: cartItems[itemid] - 1 });
   };
+
   return (
     <>
       <bucket.Provider
@@ -79,6 +81,7 @@ function CreateStore(props) {
           cartItemCount,
           brandsByCategory,
           hasUserLoggedIn,
+          handleLogout,
         }}
       >
         {props.children}
