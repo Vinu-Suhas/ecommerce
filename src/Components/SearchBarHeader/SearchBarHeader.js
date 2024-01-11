@@ -9,7 +9,8 @@ import { DropdownMenu } from "../DropdownMenu";
 import { toast } from "react-toastify";
 export const SearchBarHeader = () => {
   const [searchData, setSearchData] = useState([]);
-  const { data, hasUserLoggedIn, handleLogout } = useContext(bucket);
+  const { data, hasUserLoggedIn, handleLogout, setHasUserLoggedIn } =
+    useContext(bucket);
   const user = useHoverEffect();
   const handleSeatchField = (event) => {
     if (event.target.value.toLowerCase() !== "") {
