@@ -22,20 +22,21 @@ export const Cart = () => {
         <h1 style={{ textAlign: "center" }}>No items are added to cart</h1>
       ) : (
         <>
+          <div className="cartTitle">
+            <h2>Product</h2>
+            <h2>Price</h2>
+            <h2>Quanity</h2>
+            <h2>Total</h2>
+          </div>
           {filteredItems.map((element, index) => {
             return (
               <div className="cartItems">
-                <h2 style={{ textAlign: "center" }}>{element.name}</h2>
-                <img
-                  src={element.imageLink}
-                  style={{
-                    height: "25vh",
-                    width: "15vw",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    alignSelf: "center",
-                  }}
-                />
+                <div className="cartItems-p1">
+                  <img src={element.imageLink} className="cartImage" />
+                </div>
+                <h2>{element.name}</h2>
+
+                <h3>{element.price}</h3>
                 <div
                   style={{
                     display: "flex",
@@ -44,7 +45,9 @@ export const Cart = () => {
                   }}
                 >
                   <button
-                    style={{ height: "4vh", width: "4vw" }}
+                    // style={{ height: "4vh", width: "4vw" }}
+
+                    className="pi-buttons"
                     onClick={() => addToCart(element.id)}
                   >
                     +
@@ -53,14 +56,13 @@ export const Cart = () => {
                     {cartItems[element.id]}
                   </h3>
                   <button
+                    className="pi-buttons"
                     onClick={() => removeFromCart(element.id)}
-                    style={{ height: "4vh", width: "4vw" }}
+                    // style={{ height: "4vh", width: "4vw" }}
                   >
                     -
                   </button>
                 </div>
-
-                <h3 style={{ textAlign: "center" }}>Price :{element.price}</h3>
               </div>
             );
           })}
@@ -93,7 +95,6 @@ export const Cart = () => {
             >
               Checkout
             </button>
-
           </div>
         </>
       )}
