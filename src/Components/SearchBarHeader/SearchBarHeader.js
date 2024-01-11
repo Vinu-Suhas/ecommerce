@@ -6,6 +6,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useHoverEffect } from "../CustomHook/useHoverEffect";
 import { DropdownMenu } from "../DropdownMenu";
+import { toast } from "react-toastify";
 export const SearchBarHeader = () => {
   const [searchData, setSearchData] = useState([]);
   const { data, hasUserLoggedIn, handleLogout } = useContext(bucket);
@@ -60,6 +61,7 @@ export const SearchBarHeader = () => {
                   onClick={() => {
                     handleLogout();
                     toast.success("Logout successful");
+                    setHasUserLoggedIn(false);
                   }}
                 >
                   Log out
