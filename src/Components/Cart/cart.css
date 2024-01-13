@@ -56,3 +56,9 @@
   color: white;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .checkout-button {
+    width: 100%;
+  }
+}

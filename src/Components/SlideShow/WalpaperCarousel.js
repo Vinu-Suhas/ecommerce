@@ -27,7 +27,7 @@ export const WallpaperCarousel = () => {
           <img
             src={wallpaper}
             alt={`Wallpaper ${index + 1}`}
-            style={{ width: "100%", height: "auto" }}
+            style={{ width: "100%", height: "30vh" }}
           />
         </div>
       ))}

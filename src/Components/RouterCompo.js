@@ -49,8 +49,7 @@ function RouterCompo() {
       <BrowserRouter>
         <SearchBarHeader />
         <div>
-          {/* style={{ marginBottom: "10rem" }} */}
-          <ul className="headingContainer">
+          <ul className="navbarContainer">
             <NavLink to="/home" style={hightlightButtons}>
               <li className="dropdown">Home</li>
             </NavLink>

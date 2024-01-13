@@ -33,3 +33,13 @@ h4 {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+  .feature {
+    width: 85%;
+    margin-bottom: 2rem;
+  }
+  .featuredProducts {
+    justify-content: space-evenly;
+  }
+}

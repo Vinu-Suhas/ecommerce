@@ -1,8 +1,9 @@
+// Cart.js
 import React, { useContext, useEffect, useState } from "react";
 import { bucket } from "../Store/CreateStore";
 import "./cart.css";
 
-const Cart = () => {
+export const Cart = () => {
   const { cartItems, data, addToCart, removeFromCart, cartItemCount } =
     useContext(bucket);
   const [cartItemsList, setCartItemsList] = useState([]);
@@ -37,13 +38,12 @@ const Cart = () => {
                   alt={item.name}
                   className="cart-image"
                 />
-                <h3 style={{ width: "15%" }}>{item.name}</h3>
+                <h3>{item.name}</h3>
               </div>
               <p>{item.price}</p>
               <div className="quantity-controls">
                 <button
                   className="pi-buttons"
-                  style={{ marginRight: "1rem" }}
                   onClick={() => addToCart(item.id)}
                 >
                   +
@@ -51,7 +51,6 @@ const Cart = () => {
                 <p>{cartItems[item.id]}</p>
                 <button
                   className="pi-buttons"
-                  style={{ marginLeft: "1rem" }}
                   onClick={() => removeFromCart(item.id)}
                 >
                   -
@@ -77,5 +76,3 @@ const Cart = () => {
     </div>
   );
 };
-
-export { Cart };
