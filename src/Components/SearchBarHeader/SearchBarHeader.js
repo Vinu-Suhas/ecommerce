@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { createRef, useContext, useState } from "react";
 import "./SearchBarHeader.css";
 import { FaRegUserCircle } from "react-icons/fa";
 import { bucket } from "../Store/CreateStore";
@@ -17,6 +17,7 @@ export const SearchBarHeader = () => {
     setCartItems,
   } = useContext(bucket);
   const user = useHoverEffect();
+  const searchRef = createRef();
   const handleSeatchField = (event) => {
     if (event.target.value.toLowerCase() !== "") {
       setSearchData(
@@ -34,6 +35,7 @@ export const SearchBarHeader = () => {
           type="text"
           onChange={handleSeatchField}
           placeholder="Enter Product name"
+          ref={searchRef}
         />
         <div
           onMouseEnter={user.handleMouseEnter}
@@ -98,7 +100,14 @@ export const SearchBarHeader = () => {
                   )}
                 </span>
                 <Link to={`/productinfo/${element.id}`}>
-                  <span>More info</span>
+                  <span
+                    onClick={() => {
+                      searchRef.current.value = "";
+                      setSearchData([]);
+                    }}
+                  >
+                    More info
+                  </span>
                 </Link>
               </div>
             );

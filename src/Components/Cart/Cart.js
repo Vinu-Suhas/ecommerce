@@ -64,6 +64,7 @@ export const Cart = () => {
                   >
                     -
                   </button>
+
                 </div>
               </div>
             );
@@ -79,7 +80,7 @@ export const Cart = () => {
               //   width: "40%",
             }}
           >
-            <h2>Total:</h2>
+            {/* <h2>Total:</h2> */}
             <div className="">
               <p>Total Items: {cartItemCount}</p>
               <hr style={{ color: "black" }} />
