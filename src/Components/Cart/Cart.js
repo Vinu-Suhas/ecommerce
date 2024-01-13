@@ -1,108 +1,81 @@
 import React, { useContext, useEffect, useState } from "react";
 import { bucket } from "../Store/CreateStore";
 import "./cart.css";
-// import { PaymentGateway } from "../PaymentGateway/PaymentGateway";
-export const Cart = () => {
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [cartItemsPrice, setCartItemsPrice] = useState(0);
+
+const Cart = () => {
   const { cartItems, data, addToCart, removeFromCart, cartItemCount } =
     useContext(bucket);
+  const [cartItemsList, setCartItemsList] = useState([]);
+
   useEffect(() => {
-    setFilteredItems(data.filter((item) => cartItems[item.id] > 0));
-    setCartItemsPrice(
-      filteredItems.reduce((finalPrice, element) => {
-        return finalPrice + cartItems[element.id] * Number(element.price);
-      }, 0)
-    );
-  }, [cartItems]);
+    const filteredItems = data.filter((item) => cartItems[item.id] > 0);
+    setCartItemsList(filteredItems);
+  }, [cartItems, data]);
+
+  const calculateTotalPrice = () => {
+    return cartItemsList.reduce((total, item) => {
+      return total + cartItems[item.id] * Number(item.price);
+    }, 0);
+  };
 
   return (
-    <>
-      {filteredItems.length == 0 ? (
-        <h1 style={{ textAlign: "center" }}>No items are added to cart</h1>
+    <div className="cart-container">
+      {cartItemsList.length === 0 ? (
+        <h1 className="empty-cart-message">No items are added to the cart</h1>
       ) : (
         <>
-          <div className="cartTitle">
+          <div className="cart-title">
             <h2>Product</h2>
-            <h2 style={{ marginLeft: "17rem" }}>Price</h2>
-            <h2>Quanity</h2>
-            {/* <h2>Total</h2> */}
+            <h2>Price</h2>
+            <h2>Quantity</h2>
           </div>
-          {filteredItems.map((element, index) => {
-            return (
-              <div className="cartItems">
-                <div className="cartItems-p1">
-                  <img src={element.imageLink} className="cartImage" />
-                  <h2>{element.name}</h2>
-                </div>
-
-                <h3>{element.price}</h3>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginTop: "-6rem",
-                    marginRight: "4rem",
-                  }}
-                >
-                  <button
-                    // style={{ height: "4vh", width: "4vw" }}
-
-                    className="pi-buttons"
-                    onClick={() => addToCart(element.id)}
-                  >
-                    +
-                  </button>
-                  <h3 style={{ marginLeft: "2vw", marginRight: "2vw" }}>
-                    {cartItems[element.id]}
-                  </h3>
-                  <button
-                    className="pi-buttons"
-                    onClick={() => removeFromCart(element.id)}
-                    // style={{ height: "4vh", width: "4vw" }}
-                  >
-                    -
-                  </button>
-
-                </div>
+          {cartItemsList.map((item) => (
+            <div key={item.id} className="cart-item">
+              <div className="cart-item-details">
+                <img
+                  src={item.imageLink}
+                  alt={item.name}
+                  className="cart-image"
+                />
+                <h3 style={{ width: "15%" }}>{item.name}</h3>
               </div>
-            );
-          })}
-          <div
-            className="cartItems"
-            style={{
-              alignItems: "center",
-              //   display: "flex",
-              //   justifyContent: "center",
-              //   flexDirection: "column",
-              border: "5px solid green",
-              //   width: "40%",
-            }}
-          >
-            {/* <h2>Total:</h2> */}
-            <div className="">
-              <p>Total Items: {cartItemCount}</p>
-              <hr style={{ color: "black" }} />
-              <p>Total Before Tax: {cartItemsPrice}</p>
-              <p>Delivery Charges: 100</p>
-              <p>GST: {cartItemsPrice * 0.18}</p>
-              <p>Final Amount: 22300</p>
+              <p>{item.price}</p>
+              <div className="quantity-controls">
+                <button
+                  className="pi-buttons"
+                  style={{ marginRight: "1rem" }}
+                  onClick={() => addToCart(item.id)}
+                >
+                  +
+                </button>
+                <p>{cartItems[item.id]}</p>
+                <button
+                  className="pi-buttons"
+                  style={{ marginLeft: "1rem" }}
+                  onClick={() => removeFromCart(item.id)}
+                >
+                  -
+                </button>
+              </div>
             </div>
-            <button
-              style={{
-                marginBottom: "2rem",
-                background: "#04aa6d",
-                padding: "1rem",
-                borderRadius: "1rem",
-                width: "8rem",
-              }}
-            >
-              Checkout
-            </button>
+          ))}
+          <div className="order-summary">
+            <h2>Order Summary :</h2>
+            <p>Total Items : {cartItemCount}</p>
+            <hr />
+            <p>Total Before Tax : ₹{calculateTotalPrice()}</p>
+            <hr />
+            <p>Delivery Charges : ₹100</p>
+            <hr />
+            <p>GST : ₹{(calculateTotalPrice() * 0.18).toFixed(2)}</p>
+            <hr />
+            <p>Final Amount : ₹{calculateTotalPrice()}</p>
+            <button className="checkout-button">Checkout</button>
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
+
+export { Cart };
