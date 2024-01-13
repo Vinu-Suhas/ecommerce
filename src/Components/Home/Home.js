@@ -145,6 +145,7 @@ export function Home({ newData }) {
               color={element.color}
               storage={element.storage}
               img={element.imageLink}
+              rating={element.rating}
               key={index}
               price={element.price}
             />

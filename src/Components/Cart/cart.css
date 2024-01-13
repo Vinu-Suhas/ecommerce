@@ -25,6 +25,8 @@
 .cart-item-details {
   display: flex;
   align-items: center;
+  width: 16%;
+  margin-right: 0;
 }
 
 .cart-image {

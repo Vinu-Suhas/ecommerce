@@ -1,6 +1,6 @@
 .productContainer {
   display: flex;
-  border: solid 3px green;
+  border: solid 1px green;
   margin-bottom: 5px;
   flex-direction: column;
   width: fit-content;
@@ -21,7 +21,7 @@
   padding-right: 8px;
 }
 
-.productContainer a{
+.productContainer a {
   display: flex;
   align-items: center;
   flex-direction: column;

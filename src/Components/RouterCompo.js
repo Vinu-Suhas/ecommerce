@@ -16,7 +16,7 @@ import { bucket } from "./Store/CreateStore";
 import { SearchBarHeader } from "./SearchBarHeader/SearchBarHeader";
 
 function RouterCompo() {
-  const { cartItemCount, data ,brandsByCategory} = useContext(bucket);
+  const { cartItemCount, data, brandsByCategory } = useContext(bucket);
   // const getBrandsByCategory = (products) => {
   //   const brandsByCategory = {};
 
@@ -108,10 +108,10 @@ function RouterCompo() {
             </NavLink>
           </ul>
           {/* mobile navbar */}
-          <div className="mobile-navbar-btn">
+          {/* <div className="mobile-navbar-btn">
             <CgMenu className="mobile-nav-icon" />
             <CgClose className="mobile-nav-icon close-outline" />
-          </div>
+          </div> */}
           <Routes>
             <Route path="/home" element={<Home />} />
             <Route path="/" element={<Home />} />
