@@ -19,13 +19,20 @@
   margin-top: 5vh;
   z-index: 45;
   position: absolute;
-  background-color: grey;
-  color: wheat;
+  background-color: #d5d1d1;
+  color: black;
   height: 60vh;
   margin-left: auto;
   margin-right: auto;
   align-self: center;
   width: 100%;
+}
+.searchProductData span {
+  width: 10%;
+}
+.searchResultContainer a {
+  text-decoration: none;
+  color: black;
 }
 
 .logo {

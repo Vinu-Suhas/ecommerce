@@ -75,17 +75,19 @@ export const Cart = () => {
               //   display: "flex",
               //   justifyContent: "center",
               //   flexDirection: "column",
-              //   border: "5px solid green",
+              border: "5px solid green",
               //   width: "40%",
             }}
           >
             <h2>Total:</h2>
-            <p>Total Items: {cartItemCount}</p>
-            <hr style={{ color: "black" }} />
-            <p>Total Before Tax: {cartItemsPrice}</p>
-            <p>Delivery Charges: 100</p>
-            <p>GST: {cartItemsPrice * 0.18}</p>
-            <p>Final Amount: 22300</p>
+            <div className="">
+              <p>Total Items: {cartItemCount}</p>
+              <hr style={{ color: "black" }} />
+              <p>Total Before Tax: {cartItemsPrice}</p>
+              <p>Delivery Charges: 100</p>
+              <p>GST: {cartItemsPrice * 0.18}</p>
+              <p>Final Amount: 22300</p>
+            </div>
             <button
               style={{
                 marginBottom: "2rem",
