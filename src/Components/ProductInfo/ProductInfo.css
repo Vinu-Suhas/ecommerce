@@ -11,11 +11,32 @@
   width: 80%;
 }
 
-.pi-buttons{
+.pi-buttons {
   background: green;
   color: white;
   border-radius: 16px;
   padding: 10px;
   font-weight: bold;
   min-width: 4rem;
+}
+.productitle {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .productInfoDivider {
+    flex-direction: column;
+  }
+  .productInfoDivider-1 {
+    width: 100%;
+  }
+
+  .productInfoDivider-2 {
+    margin-left: 0;
+    width: 100%;
+  }
+  .productInfoDivider * {
+    text-align: center;
+  }
 }

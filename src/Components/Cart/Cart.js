@@ -40,11 +40,12 @@ export const Cart = () => {
                 />
                 <h3>{item.name}</h3>
               </div>
-              <p>{item.price}</p>
+              <p>₹{item.price}</p>
               <div className="quantity-controls">
                 <button
                   className="pi-buttons"
                   onClick={() => addToCart(item.id)}
+                  style={{ marginRight: "1rem" }}
                 >
                   +
                 </button>
@@ -52,6 +53,7 @@ export const Cart = () => {
                 <button
                   className="pi-buttons"
                   onClick={() => removeFromCart(item.id)}
+                  style={{ marginLeft: "1rem" }}
                 >
                   -
                 </button>

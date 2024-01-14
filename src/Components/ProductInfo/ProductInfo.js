@@ -11,7 +11,7 @@ export default function ProductInfo() {
   const cartAmount = cartItems[product.id] ?? 0;
   return (
     <div className="product-info-container">
-      <h2 style={{ textAlign: "center" }}>{product.name}</h2>
+      <h2 style={{ textAlign: "center" }} className="productitle">{product.name}</h2>
       <div className="productInfoDivider">
         <div className="productInfoDivider-1">
           <img

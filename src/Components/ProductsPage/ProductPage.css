@@ -18,3 +18,9 @@
   border-top: 5px solid green;
   border-bottom: 5px solid green;
 }
+
+@media (max-width: 768px) {
+  .filterBoxContainer {
+    display: none;
+  }
+}
