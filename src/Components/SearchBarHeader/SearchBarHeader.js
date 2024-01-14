@@ -6,6 +6,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { useHoverEffect } from "../CustomHook/useHoverEffect";
 import { DropdownMenu } from "../DropdownMenu";
+import { CgClose, CgMenu } from "react-icons/cg";
 import { toast } from "react-toastify";
 export const SearchBarHeader = () => {
   const [searchData, setSearchData] = useState([]);
@@ -37,6 +38,10 @@ export const SearchBarHeader = () => {
           placeholder="Enter Product name"
           ref={searchRef}
         />
+        <CgMenu className="mobile-nav-icon" onClick={() => {}} />
+        <div className="mobileNavbar " id="mobileNavbar">
+          <h2> Home2Home</h2>
+        </div>
         <div
           onMouseEnter={user.handleMouseEnter}
           onMouseLeave={user.handleMouseLeave}

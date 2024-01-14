@@ -14,6 +14,9 @@
   height: 3vh;
   width: 24vw;
 }
+.hide {
+  display: none;
+}
 
 .searchResultContainer {
   margin-top: 5vh;
@@ -26,6 +29,13 @@
   margin-right: auto;
   align-self: center;
   width: 100%;
+}
+.mobileNavbar {
+  position: absolute;
+  height: 60vh;
+  background-color: #d5d1d1;
+  width: 100%;
+  z-index: 50;
 }
 .searchProductData span {
   width: 10%;
