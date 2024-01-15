@@ -39,7 +39,7 @@ export const SearchBarHeader = () => {
           ref={searchRef}
         />
         <CgMenu className="mobile-nav-icon" onClick={() => {}} />
-        <div className="mobileNavbar " id="mobileNavbar">
+        <div className="mobileNavbar hide" id="mobileNavbar">
           <h2> Home2Home</h2>
         </div>
         <div
