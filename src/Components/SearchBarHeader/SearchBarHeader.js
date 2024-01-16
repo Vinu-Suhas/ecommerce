@@ -38,9 +38,21 @@ export const SearchBarHeader = () => {
           placeholder="Enter Product name"
           ref={searchRef}
         />
-        <CgMenu className="mobile-nav-icon" onClick={() => {}} />
+        <CgMenu
+          className="mobile-nav-icon"
+          onClick={() => {
+            let mobilenavbar = document.getElementById("mobileNavbar");
+            mobilenavbar.classList.remove("hide");
+          }}
+        />
         <div className="mobileNavbar hide" id="mobileNavbar">
           <h2> Home2Home</h2>
+          <CgClose
+            onClick={() => {
+              let mobilenavbar = document.getElementById("mobileNavbar");
+              mobilenavbar.classList.add("hide");
+            }}
+          />
         </div>
         <div
           onMouseEnter={user.handleMouseEnter}

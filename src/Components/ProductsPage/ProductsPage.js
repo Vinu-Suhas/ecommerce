@@ -32,7 +32,10 @@ export function ProductsPage(props) {
     }
   }, [products, brandFilter]);
   return (
-    <div style={{ display: "flex", margin: "2rem" }}>
+    <div
+      // style={{ display: "flex", margin: "2rem" }}
+      className="filterBoxContainerparent"
+    >
       <div className="filterBoxContainer">
         <h1 className="filterTitle">FILTER</h1>
         <div>

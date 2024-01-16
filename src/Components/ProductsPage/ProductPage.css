@@ -19,8 +19,17 @@
   border-bottom: 5px solid green;
 }
 
+.filterBoxContainerparent{
+  display: flex;
+  margin: 2rem;
+}
+
 @media (max-width: 768px) {
   .filterBoxContainer {
     display: none;
+  }
+
+  .filterBoxContainerparent{
+    justify-content: center;
   }
 }
