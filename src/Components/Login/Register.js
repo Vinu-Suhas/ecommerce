@@ -53,8 +53,9 @@ export function Register() {
   return (
     <>
       <form className="formContainer">
-        <label>
-          Name
+        <div className="formfieldContainer">
+          <h3 className="formHeading"> NAME:</h3>
+
           <input
             type="text"
             name="name"
@@ -64,9 +65,10 @@ export function Register() {
             minLength={1}
             ref={nameRef}
           />
-        </label>
-        <label>
-          Email
+        </div>
+        <div className="formfieldContainer">
+          <h3 className="formHeading"> EMAIL:</h3>
+
           <input
             type="email"
             name="email;"
@@ -76,9 +78,10 @@ export function Register() {
             minLength={1}
             ref={emailRef}
           />
-        </label>
-        <label>
-          Password
+        </div>
+        <div className="formfieldContainer">
+          <h3 className="formHeading"> PASSWORD:</h3>
+
           <input
             type="password"
             name="password"
@@ -88,9 +91,9 @@ export function Register() {
             minLength={1}
             ref={passwordRef}
           />
-        </label>
+        </div>
         <button onClick={() => handleSubmit()} type="button">
-          Sign up
+          REGISTER
         </button>
       </form>
     </>

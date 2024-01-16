@@ -53,8 +53,8 @@ export function Login() {
   return (
     <>
       <form className="formContainer">
-        <label>
-          Email
+        <div className="formfieldContainer">
+          <h3 className="formHeading">EMAIL:</h3>
           <input
             type="email"
             name="email"
@@ -64,9 +64,9 @@ export function Login() {
             minLength={1}
             ref={emailRef}
           />
-        </label>
-        <label>
-          Password
+        </div>
+        <div className="formfieldContainer">
+          <h3 className="formHeading"> PASSWORD:</h3>
           <input
             type="password"
             name="password"
@@ -76,9 +76,9 @@ export function Login() {
             minLength={1}
             ref={passwordRef}
           />
-        </label>
+        </div>
         <button onClick={() => handleSubmit()} type="button">
-          Login
+          LOGIN
         </button>
         <p>
           Havent created account? <NavLink to="/register">create here</NavLink>
