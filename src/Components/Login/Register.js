@@ -1,8 +1,10 @@
 import axios from "axios";
 import React, { createRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 export function Register() {
   const [formData, setFormData] = useState({});
+  const nav = useNavigate();
   const emailRef = createRef();
   const passwordRef = createRef();
   const nameRef = createRef();
@@ -10,11 +12,15 @@ export function Register() {
   const handleSubmit = () => {
     if (handleVerification()) {
       axios
-        .post("https://react-project2-backend-vinu.onrender.com/api/register", formData)
+        .post(
+          "https://react-project2-backend-vinu.onrender.com/api/register",
+          formData
+        )
         .then((response) => {
           toast.success("Registration successful");
+          nav("/login");
         })
-        .catch((error) =>toast.error(error.msg));
+        .catch((error) => toast.error(error.msg));
     }
   };
   const handleVerification = () => {
@@ -31,7 +37,7 @@ export function Register() {
       toast.warn("Password is empty");
       return false;
     } else if (passwordRef.current.value.length < 7) {
-      console.log("password ")
+      console.log("password ");
       toast.warn("min password length should be 8");
       return false;
     }

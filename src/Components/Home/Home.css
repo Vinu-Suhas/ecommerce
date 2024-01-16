@@ -33,6 +33,9 @@ h4 {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.container {
+  overflow-x: hidden;
+}
 
 @media (max-width: 768px) {
   .feature {

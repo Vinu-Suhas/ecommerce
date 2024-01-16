@@ -2,12 +2,18 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProductGrid } from "../ProductGrid/ProductGrid";
 import { bucket } from "../Store/CreateStore";
 import "./ProductPage.css";
+import { useLocation } from "react-router-dom";
 export function ProductsPage(props) {
+  let location = useLocation();
   const [newData, setNewData] = useState([]);
   const [products, setProducts] = useState([]);
-  const [brandFilter, setBrandFilter] = useState("");
+  const [brandFilter, setBrandFilter] = useState(""); //location?.state?.brand ??
   const { data } = useContext(bucket);
 
+  useEffect(() => {
+    setBrandFilter(location?.state?.brand);
+    console.log("Navlink", brandFilter);
+  }, [useLocation]);
   useEffect(() => {
     setProducts(
       data.filter((item) => item.category.toLowerCase() === props.category)
@@ -42,7 +48,7 @@ export function ProductsPage(props) {
             );
           })}
           <h3
-            style={{ textAlign: "center" ,color:"red"}}
+            style={{ textAlign: "center", color: "red" }}
             onClick={() => setBrandFilter("")}
           >
             Clear

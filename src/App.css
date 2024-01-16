@@ -99,13 +99,13 @@ button {
 
 .grid {
   display: grid;
-  gap: 9rem;
+  /* gap: 9rem; */
 }
 
 .grid-two-column {
   grid-template-columns: repeat(2, 1fr);
 }
-
+/* 
 .grid-three-column {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -116,7 +116,7 @@ button {
 
 .grid-five-column {
   grid-template-columns: repeat(5, 1fr);
-}
+} */
 .intro-data {
   margin-bottom: 0;
   text-transform: uppercase;
@@ -133,7 +133,7 @@ button {
   align-items: center;
 }
 
-figure {
+/* figure {
   position: relative;
 
   &::after {
@@ -146,7 +146,7 @@ figure {
     z-index: -1;
     background: #04aa6d;
   }
-}
+} */
 .section-image {
   width: 100%;
   height: auto;

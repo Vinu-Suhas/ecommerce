@@ -2,8 +2,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { bucket } from "../Store/CreateStore";
 import "./cart.css";
+import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
+  const Navigate = useNavigate();
   const { cartItems, data, addToCart, removeFromCart, cartItemCount } =
     useContext(bucket);
   const [cartItemsList, setCartItemsList] = useState([]);
@@ -71,7 +73,12 @@ export const Cart = () => {
             <p>GST : ₹{(calculateTotalPrice() * 0.18).toFixed(2)}</p>
             <hr />
             <p>Final Amount : ₹{calculateTotalPrice()}</p>
-            <button className="checkout-button">Checkout</button>
+            <button
+              className="checkout-button"
+              onClick={() => Navigate("/successful")}
+            >
+              Checkout
+            </button>
           </div>
         </>
       )}

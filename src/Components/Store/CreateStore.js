@@ -67,6 +67,9 @@ function CreateStore(props) {
     if (cartItems[itemid] !== undefined)
       setCartItems({ ...cartItems, [itemid]: cartItems[itemid] - 1 });
   };
+  const hightlightButtons = ({ isActive }) => ({
+    color: isActive ? "darkgreen" : "white",
+  });
 
   return (
     <>
@@ -83,6 +86,7 @@ function CreateStore(props) {
           brandsByCategory,
           hasUserLoggedIn,
           handleLogout,
+          hightlightButtons,
         }}
       >
         {props.children}
