@@ -61,7 +61,6 @@ export const SearchBarHeader = () => {
             onClick={() => closeNavBar()}
             style={hightlightButtons}
           >
-            {" "}
             <h2> Home</h2>
           </NavLink>
           <NavLink
@@ -92,6 +91,31 @@ export const SearchBarHeader = () => {
           >
             <h2> Accessories </h2>
           </NavLink>
+          <NavLink
+            to="/cart"
+            onClick={() => closeNavBar()}
+            style={hightlightButtons}
+          >
+            <h2> Cart </h2>
+          </NavLink>
+          {!hasUserLoggedIn ? (
+            <>
+              <NavLink to="/login">
+                <h2>Login</h2>
+              </NavLink>
+            </>
+          ) : (
+            <h2
+              onClick={() => {
+                handleLogout();
+                toast.success("Logout successful");
+                setCartItems({});
+                setHasUserLoggedIn(false);
+              }}
+            >
+              Log out
+            </h2>
+          )}
         </div>
         <div
           onMouseEnter={user.handleMouseEnter}
@@ -114,9 +138,6 @@ export const SearchBarHeader = () => {
                 <>
                   <NavLink to="/login">
                     <h3 style={{ margin: "0" }}>Login</h3>
-                  </NavLink>
-                  <NavLink to="/register">
-                    <h3 style={{ margin: "0" }}>Register</h3>
                   </NavLink>
                 </>
               ) : (

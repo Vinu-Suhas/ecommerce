@@ -1,6 +1,7 @@
 .cart-container {
   width: 75%;
   margin: 0 auto;
+  min-height: 28rem;
 }
 
 .empty-cart-message {
@@ -66,6 +67,7 @@
   }
   .cart-container {
     width: 90%;
+    min-height: 20rem;
   }
   .quantity-controls .pi-buttons {
     padding: 1rem;
