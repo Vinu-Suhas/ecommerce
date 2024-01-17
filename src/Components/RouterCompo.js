@@ -47,7 +47,7 @@ function RouterCompo() {
   const Accessorie = useHoverEffect();
 
   return (
-    <>
+    <div style={{ overflowX: "hidden" }}>
       <BrowserRouter>
         <SearchBarHeader />
         <div>
@@ -165,7 +165,7 @@ function RouterCompo() {
           </Routes>
         </div>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

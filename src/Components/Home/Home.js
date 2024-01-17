@@ -34,32 +34,21 @@ export function Home({ newData }) {
   return (
     <>
       <div className="container">
-        <div className="grid grid-two-column">
-          <div className="hero-seciton-data">
-            <p className="intro-data">Welcome to</p>
-            <h1>IV Store</h1>
-            <p>
-              this is only to testthis is only to testthis is only to test this
-              is only to test this is only to test this is only to test vthis is
-              only to test this is only to test this is only to test this is
-              only to test this is only to test this is only to test this is
-              only to test this is only to test this is only to test this is
-              only to test this is only to test this is only to test this is
-              only to test this is only to
-            </p>
-            <button className="shopNow" onClick={() => nav("/smartphones")}>
-              SHOP NOW
-            </button>
-          </div>
-          <div className="image-section">
-            <figure>
-              <img
-                src="https://t4.ftcdn.net/jpg/05/90/98/01/360_F_590980156_W28QRjBKhacNz8WeTpDr3v3uUOp5A9JF.jpg"
-                alt="Image"
-                className="section-image"
-              />
-            </figure>
-          </div>
+        <div className="">
+          <p className="intro-data">Welcome to</p>
+          <h1>IV Store</h1>
+          <p>
+            this is only to testthis is only to testthis is only to test this is
+            only to test this is only to test this is only to test vthis is only
+            to test this is only to test this is only to test this is only to
+            test this is only to test this is only to test this is only to test
+            this is only to test this is only to test this is only to test this
+            is only to test this is only to test this is only to test this is
+            only to
+          </p>
+          <button className="shopNow" onClick={() => nav("/smartphones")}>
+            SHOP NOW
+          </button>
         </div>
       </div>
       <WallpaperCarousel />
