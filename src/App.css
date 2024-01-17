@@ -189,6 +189,9 @@ button.shopNow {
 .listNone li {
   text-align: center;
 }
+.mobile-nav-icon {
+  display: none;
+}
 @media (max-width: 768px) {
   .navbarContainer {
     display: none;
@@ -210,10 +213,7 @@ button.shopNow {
     z-index: 9999;
     border: #04aa6d;
   }
-  .mobile-nav-icon {
-    font-size: 4.2rem;
-    border: #04aa6d;
-  }
+
 
   .active .close-outline {
     display: inline-block;
@@ -228,4 +228,7 @@ button.shopNow {
     color: #04aa6d;
     z-index: 9999;
   } */
+  .mobile-nav-icon {
+    display: block;
+  }
 }
