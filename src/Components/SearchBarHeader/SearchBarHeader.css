@@ -36,6 +36,11 @@
   background-color: #d5d1d1;
   width: 100%;
   z-index: 50;
+  margin-top: 29rem;
+}
+.mobileNavbar h2 {
+  text-align: center;
+  color:white
 }
 .searchProductData span {
   width: 10%;

@@ -9,6 +9,10 @@ import { DropdownMenu } from "../DropdownMenu";
 import { CgClose, CgMenu } from "react-icons/cg";
 import { toast } from "react-toastify";
 export const SearchBarHeader = () => {
+  const closeNavBar = () => {
+    let mobilenavbar = document.getElementById("mobileNavbar");
+    mobilenavbar.classList.add("hide");
+  };
   const [searchData, setSearchData] = useState([]);
   const {
     data,
@@ -16,6 +20,7 @@ export const SearchBarHeader = () => {
     handleLogout,
     setHasUserLoggedIn,
     setCartItems,
+    hightlightButtons,
   } = useContext(bucket);
   const user = useHoverEffect();
   const searchRef = createRef();
@@ -46,13 +51,47 @@ export const SearchBarHeader = () => {
           }}
         />
         <div className="mobileNavbar hide" id="mobileNavbar">
-          <h2> Home2Home</h2>
           <CgClose
-            onClick={() => {
-              let mobilenavbar = document.getElementById("mobileNavbar");
-              mobilenavbar.classList.add("hide");
-            }}
+            size={20}
+            onClick={() => closeNavBar()}
+            style={{ float: "right" }}
           />
+          <NavLink
+            to="/home"
+            onClick={() => closeNavBar()}
+            style={hightlightButtons}
+          >
+            {" "}
+            <h2> Home</h2>
+          </NavLink>
+          <NavLink
+            to="/smartphones"
+            onClick={() => closeNavBar()}
+            style={hightlightButtons}
+          >
+            <h2> Smartphones</h2>
+          </NavLink>
+          <NavLink
+            to="/laptops"
+            onClick={() => closeNavBar()}
+            style={hightlightButtons}
+          >
+            <h2> Laptops</h2>
+          </NavLink>
+          <NavLink
+            to="/tablets"
+            onClick={() => closeNavBar()}
+            style={hightlightButtons}
+          >
+            <h2> Tablets</h2>
+          </NavLink>
+          <NavLink
+            to="/accessories"
+            onClick={() => closeNavBar()}
+            style={hightlightButtons}
+          >
+            <h2> Accessories </h2>
+          </NavLink>
         </div>
         <div
           onMouseEnter={user.handleMouseEnter}
