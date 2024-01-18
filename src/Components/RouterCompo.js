@@ -63,7 +63,10 @@ function RouterCompo() {
                 Smartphones
               </NavLink>
               {Smartphone.isDropdownVisible && (
-                <DropdownMenu dataset={brandsByCategory.smartphone} />
+                <DropdownMenu
+                  dataset={brandsByCategory.smartphone}
+                  destination={"/smartphones"}
+                />
               )}
             </li>
             <li
@@ -74,7 +77,10 @@ function RouterCompo() {
                 Laptops
               </NavLink>
               {Laptop.isDropdownVisible && (
-                <DropdownMenu dataset={brandsByCategory.laptop} />
+                <DropdownMenu
+                  dataset={brandsByCategory.laptop}
+                  destination={"/laptops"}
+                />
               )}
             </li>
             <li
@@ -85,7 +91,10 @@ function RouterCompo() {
                 Tablets
               </NavLink>
               {Tablet.isDropdownVisible && (
-                <DropdownMenu dataset={brandsByCategory.tablet} />
+                <DropdownMenu
+                  dataset={brandsByCategory.tablet}
+                  destination={"/tablets"}
+                />
               )}
             </li>
             <li

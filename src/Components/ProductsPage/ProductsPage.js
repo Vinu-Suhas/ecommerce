@@ -13,7 +13,7 @@ export function ProductsPage(props) {
   useEffect(() => {
     setBrandFilter(location?.state?.brand);
     console.log("Navlink", brandFilter);
-  }, [useLocation]);
+  }, [location]);
   useEffect(() => {
     setProducts(
       data.filter((item) => item.category.toLowerCase() === props.category)
