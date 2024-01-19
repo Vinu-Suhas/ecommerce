@@ -72,13 +72,16 @@ export const Cart = () => {
             <h2>Order Summary :</h2>
             <p>Total Items : {cartItemCount}</p>
             <hr />
-            <p>Total Before Tax : ₹{calculateTotalPrice()}</p>
+            <p>
+              Total Before Tax : ₹
+              {calculateTotalPrice() - calculateTotalPrice() * 0.18}
+            </p>
             <hr />
             <p>Delivery Charges : ₹100</p>
             <hr />
             <p>GST : ₹{(calculateTotalPrice() * 0.18).toFixed(2)}</p>
             <hr />
-            <p>Final Amount : ₹{calculateTotalPrice()}</p>
+            <p>Final Amount : ₹{calculateTotalPrice()+100}</p>
             <button
               className="checkout-button"
               onClick={() => {

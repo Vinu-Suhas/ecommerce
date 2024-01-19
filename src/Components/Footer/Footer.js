@@ -1,6 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
 
 import {
   faTwitter,
@@ -17,28 +18,46 @@ export function Footer() {
         >
           <div className="col">
             <ul className="unstyledList">
-              <li>Smartphone</li>
-              <li>Laptops</li>
-              <li>Tablets</li>
+              <NavLink to="/smartphones">
+                <li>Smartphone</li>
+              </NavLink>
+              <NavLink to="/laptops">
+                <li>Laptops</li>
+              </NavLink>
+              <NavLink to="/tablets">
+                <li>Tablets</li>
+              </NavLink>
             </ul>
           </div>
           <div className="col">
             <ul className="unstyledList">
-              <li>Fitness</li>
-              <li>Food</li>
-              <li>Health</li>
+              <NavLink to="/accessories">
+                <li>Accessories</li>
+              </NavLink>
+              <a href="https://github.com/Vinu-Suhas">
+                <li>Github</li>
+              </a>
+              <a href="https://www.youtube.com/channel/UC1F2qSvltPwcIvlnsJQoyBg/">
+                <li>Youtube</li>
+              </a>
             </ul>
           </div>
           <div className="col">
             <ul className="unstyledList">
               <li>
-                <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                <a href="https://twitter.com">
+                  <FontAwesomeIcon icon={faTwitter} size="2xl" />
+                </a>
               </li>
               <li>
-                <FontAwesomeIcon icon={faFacebook} size="2xl" />
+                <a href="https://facebook.com">
+                  <FontAwesomeIcon icon={faFacebook} size="2xl" />
+                </a>
               </li>
               <li>
-                <FontAwesomeIcon icon={faInstagram} size="2xl" />
+                <a href="https://instagram.com">
+                  <FontAwesomeIcon icon={faInstagram} size="2xl" />
+                </a>
               </li>
             </ul>
           </div>

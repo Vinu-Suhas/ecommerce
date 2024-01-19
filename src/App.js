@@ -5,15 +5,18 @@ import { Footer } from "./Components/Footer/Footer";
 import { CreateStore } from "./Components/Store/CreateStore";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <CreateStore>
-        <RouterCompo />
-        <Footer />
-      </CreateStore>
-      <ToastContainer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <CreateStore>
+          <RouterCompo />
+          <Footer />
+        </CreateStore>
+        <ToastContainer />
+      </div>
+    </BrowserRouter>
   );
 }
 

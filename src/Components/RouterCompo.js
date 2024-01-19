@@ -48,7 +48,7 @@ function RouterCompo() {
 
   return (
     <div style={{ overflowX: "hidden" }}>
-      <BrowserRouter>
+    
         <SearchBarHeader />
         <div>
           <ul className="navbarContainer">
@@ -173,7 +173,6 @@ function RouterCompo() {
             <Route path="/successful" element={<OrderSuccessful />} />
           </Routes>
         </div>
-      </BrowserRouter>
     </div>
   );
 }
