@@ -2,6 +2,10 @@
     background-color: red;
     color: white;
 } */
+a {
+  text-decoration: none;
+  color: white;
+}
 .mainFooter {
   color: white;
   background-color: #04aa6d;
