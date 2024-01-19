@@ -36,7 +36,9 @@ export const SearchBarHeader = () => {
   return (
     <div className="searchBarHeaderContainermain">
       <div className="searchBarHeaderContainer">
-        <span className="logo">iFRUIT STORE</span>
+        <span className="logo">
+          <span style={{ color: "white" ,fontWeight:"bolder"}}>iFRUIT </span>STORE
+        </span>
         <input
           type="text"
           onChange={handleSeatchField}
