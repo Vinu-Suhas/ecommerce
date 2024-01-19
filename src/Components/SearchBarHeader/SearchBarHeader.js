@@ -27,9 +27,13 @@ export const SearchBarHeader = () => {
   const handleSeatchField = (event) => {
     if (event.target.value.toLowerCase() !== "") {
       setSearchData(
-        data.filter((element) =>
-          element.name.toLowerCase().includes(event.target.value.toLowerCase())
-        )
+        data
+          .filter((element) =>
+            element.name
+              .toLowerCase()
+              .includes(event.target.value.toLowerCase())
+          )
+          .slice(0, 6)
       );
     } else setSearchData([]);
   };
@@ -37,7 +41,8 @@ export const SearchBarHeader = () => {
     <div className="searchBarHeaderContainermain">
       <div className="searchBarHeaderContainer">
         <span className="logo">
-          <span style={{ color: "white" ,fontWeight:"bolder"}}>iFRUIT </span>STORE
+          <span style={{ color: "white", fontWeight: "bolder" }}>iFRUIT </span>
+          STORE
         </span>
         <input
           type="text"
