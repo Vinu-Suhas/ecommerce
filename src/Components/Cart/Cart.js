@@ -6,8 +6,14 @@ import { useNavigate } from "react-router-dom";
 
 export const Cart = () => {
   const Navigate = useNavigate();
-  const { cartItems, data, addToCart, removeFromCart, cartItemCount } =
-    useContext(bucket);
+  const {
+    cartItems,
+    data,
+    addToCart,
+    removeFromCart,
+    cartItemCount,
+    setCartItems,
+  } = useContext(bucket);
   const [cartItemsList, setCartItemsList] = useState([]);
 
   useEffect(() => {
@@ -75,7 +81,10 @@ export const Cart = () => {
             <p>Final Amount : ₹{calculateTotalPrice()}</p>
             <button
               className="checkout-button"
-              onClick={() => Navigate("/successful")}
+              onClick={() => {
+                setCartItems({});
+                Navigate("/successful");
+              }}
             >
               Checkout
             </button>
