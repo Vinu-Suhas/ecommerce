@@ -120,6 +120,7 @@ export const SearchBarHeader = () => {
         <div
           onMouseEnter={user.handleMouseEnter}
           onMouseLeave={user.handleMouseLeave}
+          className="useravatar"
         >
           <FaRegUserCircle size={40} />
           {user.isDropdownVisible && (

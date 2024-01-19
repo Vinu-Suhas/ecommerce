@@ -18,3 +18,9 @@
   align-items: center;
   min-height: 58vh;
 }
+
+@media (max-width: 768px) {
+  .orderConfirmationContainer {
+    margin-top: 1rem;
+  }
+}
